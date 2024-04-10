@@ -1,0 +1,6 @@
+@QuietQuillBE_HostAddress = http://localhost:5103
+
+GET {{QuietQuillBE_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
