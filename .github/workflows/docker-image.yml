@@ -17,5 +17,5 @@ jobs:
     - name: Build the Docker image
       run: |
         cd QuietQuillBE
-        dockere build --filee Dockerfile --tag qq_be:$(date +%s)
+        docker build --filee Dockerfile --tag qq_be:$(date +%s)
 
