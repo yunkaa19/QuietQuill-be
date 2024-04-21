@@ -21,9 +21,6 @@
 
     <ItemGroup>
       <Folder Include="Behavior\" />
-      <Folder Include="Entity1\Commands\" />
-      <Folder Include="Entity1\Events\" />
-      <Folder Include="Entity1\Queries\" />
       <Folder Include="Users\Events\" />
       <Folder Include="Users\Interfaces\" />
     </ItemGroup>

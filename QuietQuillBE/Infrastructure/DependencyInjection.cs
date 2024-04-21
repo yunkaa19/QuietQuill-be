@@ -32,6 +32,7 @@ public static class DependencyInjection
         services.AddScoped<IUnitOfWork>(sp =>
             sp.GetRequiredService<ApplicationDbContext>());
         
+        
         services.AddScoped<IDbConnection>(sp =>
         {
             var configuration = sp.GetService<IConfiguration>();
@@ -55,8 +56,6 @@ public static class DependencyInjection
         services.AddScoped<IReminderRepository, ReminderRepository>();
         services.AddScoped<IUserMeditationRecordRepository, UserMeditationRecordRepository>();
         services.AddScoped<IUserQuizRecordRepository, UserQuizRecordRepository>();
-        
-        
         
         
         
