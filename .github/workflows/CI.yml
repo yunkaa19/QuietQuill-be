@@ -4,24 +4,23 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
-    
     steps:
     - uses: actions/checkout@v4
-    - name: Setup dotnet 
+    - name: Setup dotnet
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '8.0'
 
     - name: Restore dependencies
-      run: dotnet restore QuietQuillBE/QuietQuillBE.sln
+      run: dotnet restore
+      working-directory: QuietQuillBE
 
     - name: Build with dotnet
-      run: dotnet build QuietQuillBE/QuietQuillBE.sln --configuration Release
+      run: dotnet build --configuration Release
+      working-directory: QuietQuillBE
 
     - name: Test with dotnet
-      run: dotnet test QuietQuillBE/QuietQuillBE.sln --configuration Release --no-build
-    - name: Run tests
-      run: dotnet test QuietQuillBE/ArchitectureTests/ArchitectureTests.csproj --configuration Release --no-build
+      run: dotnet test --configuration Release --no-build
+      working-directory: QuietQuillBE
