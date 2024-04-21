@@ -22,6 +22,6 @@ jobs:
       run: dotnet build QuietQuillBE/QuietQuillBE.sln --configuration Release
 
     - name: Test with dotnet
-      run: dotnet test QuietQuillBE.sln --configuration Release --no-build
+      run: dotnet test QuietQuillBE/QuietQuillBE.sln --configuration Release --no-build
     - name: Run tests
       run: dotnet test QuietQuillBE/ArchitectureTests/ArchitectureTests.csproj --configuration Release --no-build
