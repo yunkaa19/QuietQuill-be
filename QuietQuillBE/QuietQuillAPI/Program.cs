@@ -1,20 +1,24 @@
 using Application;
+using Application.Abstractions.Links;
 using Infrastructure;
 using Presentation;
-
+using QuietQuillBE.Extensions;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services
-    .AddApplication()
-    .AddInfrastructure(builder.Configuration)
-    .AddPresentation();
+builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddPresentation();
+builder.Services.AddApplication();
+
+
+
+
+
+
 
 var app = builder.Build();
 
@@ -23,6 +27,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.ApplyMigrations();
 }
 
 app.UseHttpsRedirection();

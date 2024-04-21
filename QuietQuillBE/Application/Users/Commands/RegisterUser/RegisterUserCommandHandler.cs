@@ -1,14 +1,12 @@
 ﻿using Application.Abstraction.Authentication;
-using Application.Users.DTOs;
 using Domain.Abstraction;
 using Domain.Entities;
 using Domain.Repositories;
 using MediatR;
 
+namespace Application.Users.Commands.RegisterUser;
 
-namespace Application.Users.Commands.Handlers;
-
-public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand>
+public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, string>
 {
 
 
@@ -23,7 +21,7 @@ public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand>
         _authenticationService = authService;
     }
     
-    public async Task Handle(RegisterUserCommand request, CancellationToken cancellationToken)
+    public async Task<string> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
     {
         var IdentityID = await _authenticationService.RegisterAsync(request.Email, request.Password);
         var user = new User(Guid.NewGuid(), request.Username, request.Email, request.Email, IdentityID);
@@ -32,6 +30,6 @@ public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand>
         
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-
+        return IdentityID;
     }
 }

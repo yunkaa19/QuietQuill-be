@@ -1,10 +1,7 @@
-﻿using Application.Users.DTOs;
+﻿using Application.Abstractions.Messaging;
 using MediatR;
 
-namespace Application.Users.Commands;
+namespace Application.Users.Commands.RegisterUser;
 
-public record RegisterUserCommand(string Email, string Password, string Username) : IRequest
-{
-    
-}
+public record RegisterUserCommand(string Email, string Password, string Username) : ICommand<string>;
 

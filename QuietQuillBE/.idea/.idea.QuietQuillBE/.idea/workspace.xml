@@ -9,17 +9,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34c601c2-b0c6-433f-91ec-4e3fd6b709d0" name="Changes" comment="jwt with firebase initiated.&#10;Created base classes and some logic to them.">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillBE.sln" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillBE.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillBE/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillBE/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillBE/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillBE/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillBE/QuietQuillBE.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillBE/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillBE/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillBE/appsettings.json" beforeDir="false" />
+    <list default="true" id="34c601c2-b0c6-433f-91ec-4e3fd6b709d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.github/workflows/ci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Abstraction/Data/IApplicationDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Abstraction/Links/ILinkService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Abstraction/Links/Link.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Primitives/DomainEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Primitives/Entity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/AdminRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/HabitLogRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/HabitRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/JournalEntryRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/MeditationSessionRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/MoodRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/QuizQuestionRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/QuizRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/ReminderRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/ResourceRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/UserMeditationRecordRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/UserQuizRecordRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QuietQuillAPI/Extensions/MigrationExtension.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/copilot/chatSessions/blobs/version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources/de2a5ec3-b2ad-4ae2-b021-fa56b9e25abc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources/de2a5ec3-b2ad-4ae2-b021-fa56b9e25abc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/LoginUser/LoginUserRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/LoginUser/LoginUserRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegsterUserValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegsterUserValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Abstraction/IUnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Abstraction/Data/IUnitOfWork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IHabbitLogRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Repositories/IHabitLogRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IHabbitRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Repositories/IHabitRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/Endpoints/Users.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/Endpoints/Users.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/QuietQuillAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/QuietQuillAPI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +64,10 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d06c1e5bad3c480b9c3eee62e2143d7848000/19/7c654602/UserRecordArgs.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -44,31 +80,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.QuietQuillBE: http.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;mariadb&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "mariadb"
     ],
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Yunuz\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Yunuz\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Yunuz\\AppData\\Local\\Symbols\\src&quot;
+    "rider.external.source.directories": [
+      "C:\\Users\\Yunuz\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Yunuz\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\Yunuz\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.QuietQuillBE: http">
     <configuration name="QuietQuillBE: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/QuietQuillAPI/QuietQuillAPI.csproj" />
@@ -194,7 +232,17 @@
       <workItem from="1712204463833" duration="134000" />
       <workItem from="1712452654404" duration="2000" />
       <workItem from="1712518877959" duration="1233000" />
-      <workItem from="1712520147994" duration="9140000" />
+      <workItem from="1712520147994" duration="10503000" />
+      <workItem from="1713099175052" duration="154000" />
+      <workItem from="1713174729148" duration="1218000" />
+      <workItem from="1713551808283" duration="596000" />
+      <workItem from="1713583072974" duration="5559000" />
+      <workItem from="1713717824760" duration="186000" />
+      <workItem from="1713718067714" duration="1197000" />
+      <workItem from="1713719323269" duration="113000" />
+      <workItem from="1713719468266" duration="1084000" />
+      <workItem from="1713720598989" duration="3238000" />
+      <workItem from="1713727366184" duration="5280000" />
     </task>
     <task id="LOCAL-00001" summary="jwt with firebase initiated.&#10;Created base classes and some logic to them.">
       <option name="closed" value="true" />
@@ -204,13 +252,30 @@
       <option name="project" value="LOCAL" />
       <updated>1712673325628</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Set up of firebase.&#10;Base entities created&#10;Some ORM functionality in place&#10;Understood the clean architecture and CQRS pattern">
+      <option name="closed" value="true" />
+      <created>1712765435256</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712765435256</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Forgotten files of last commit... oopsie">
+      <option name="closed" value="true" />
+      <created>1712765572449</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712765572449</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -225,7 +290,9 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="jwt with firebase initiated.&#10;Created base classes and some logic to them." />
-    <option name="LAST_COMMIT_MESSAGE" value="jwt with firebase initiated.&#10;Created base classes and some logic to them." />
+    <MESSAGE value="Set up of firebase.&#10;Base entities created&#10;Some ORM functionality in place&#10;Understood the clean architecture and CQRS pattern" />
+    <MESSAGE value="Forgotten files of last commit... oopsie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Forgotten files of last commit... oopsie" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

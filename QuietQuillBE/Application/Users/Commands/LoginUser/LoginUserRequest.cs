@@ -1,6 +1,3 @@
 ﻿namespace Application.Users.Commands.LoginUser;
 
-public class LoginUserRequest
-{
-    
-}
+public sealed record LoginUserRequest(string Email, string Password);

@@ -1,6 +1,6 @@
 ﻿namespace Domain.Repositories;
 
-public interface IHabbitRepository
+public interface IHabitLogRepository
 {
     
 }

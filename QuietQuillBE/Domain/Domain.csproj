@@ -7,9 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Folder Include="Abstraction\" />
       <Folder Include="DomainEvents\" />
       <Folder Include="Shared\" />
       <Folder Include="ValueObjects\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.2.0" />
     </ItemGroup>
 
 </Project>
