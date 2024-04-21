@@ -16,7 +16,7 @@ jobs:
         dotnet-version: '8.0'
 
     - name: Restore dependencies
-      run: dotnet restore QuietQuillBE.sln
+      run: dotnet restore QuietQuillBE/QuietQuillBE.sln
 
     - name: Build with dotnet
       run: dotnet build QuietQuillBE/QuietQuillBE.sln --configuration Release
