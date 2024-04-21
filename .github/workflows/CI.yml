@@ -7,18 +7,21 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
+    - uses: actions/checkout@v4
+    - name: Setup dotnet 
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '8.0'
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore QuietQuillBE.sln
 
     - name: Build with dotnet
-      run: dotnet build --configuration Release
+      run: dotnet build QuietQuillBE.sln --configuration Release
 
     - name: Test with dotnet
-      run: dotnet test --configuration Release --no-build
+      run: dotnet test QuietQuillBE.sln --configuration Release --no-build
+    - name: Run tests
+      run: dotnet test test/ArchitectureTests.csproj --configuration Release --no-build
