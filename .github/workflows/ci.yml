@@ -4,21 +4,23 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
+    - uses: actions/checkout@v4
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '8.0'
 
     - name: Restore dependencies
       run: dotnet restore
+      working-directory: QuietQuillBE
 
     - name: Build with dotnet
       run: dotnet build --configuration Release
+      working-directory: QuietQuillBE
 
     - name: Test with dotnet
       run: dotnet test --configuration Release --no-build
+      working-directory: QuietQuillBE
