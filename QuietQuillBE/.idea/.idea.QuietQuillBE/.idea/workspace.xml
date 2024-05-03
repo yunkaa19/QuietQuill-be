@@ -9,18 +9,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34c601c2-b0c6-433f-91ec-4e3fd6b709d0" name="Changes" comment="merege with CI">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources/de2a5ec3-b2ad-4ae2-b021-fa56b9e25abc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources/de2a5ec3-b2ad-4ae2-b021-fa56b9e25abc.xml" afterDir="false" />
+    <list default="true" id="34c601c2-b0c6-433f-91ec-4e3fd6b709d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Application/Users/Commands/ForgotPassword/ForgotPasswordCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Users/Commands/ForgotPassword/ForgotPasswordCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Users/Commands/ForgotPassword/ForgotPasswordRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Users/Commands/ForgotPassword/ForgotPasswordValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommandValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QuietQuillAPI/MiddleWare/ValidationExceptionHandlerMiddleware.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArchitectureTests/ArchitectureTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ArchitectureTests/ArchitectureTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Abstraction/Authentication/IAuthenticationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Abstraction/Authentication/IAuthenticationService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/LoginUser/LoginUserCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/LoginUser/LoginUserCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegsterUserValidator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Authentication/AuthenticationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Authentication/AuthenticationService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/Endpoints/Users.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/Endpoints/Users.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/QuietQuillAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/QuietQuillAPI.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -38,7 +52,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d06c1e5bad3c480b9c3eee62e2143d7848000/19/7c654602/UserRecordArgs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d06c1e5bad3c480b9c3eee62e2143d7848000/30/33890b91/AbstractFirebaseAuth.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -58,7 +72,9 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.QuietQuillBE: IIS Express.executor&quot;: &quot;Run&quot;,
     &quot;.NET Launch Settings Profile.QuietQuillBE: http.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.QuietQuillAPI/Dockerfile.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -129,6 +145,15 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="QuietQuillAPI/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="QuietQuillAPI/Dockerfile" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="QuietQuillBE/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker2">
       <deployment type="dockerfile">
         <settings>
@@ -173,6 +198,11 @@
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.QuietQuillAPI/Dockerfile" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -219,7 +249,12 @@
       <workItem from="1713719468266" duration="1084000" />
       <workItem from="1713720598989" duration="3238000" />
       <workItem from="1713727366184" duration="5524000" />
-      <workItem from="1713741551025" duration="2312000" />
+      <workItem from="1713741551025" duration="2425000" />
+      <workItem from="1713822848564" duration="17000" />
+      <workItem from="1714030163037" duration="228000" />
+      <workItem from="1714033370573" duration="3643000" />
+      <workItem from="1714042166695" duration="1588000" />
+      <workItem from="1714702316745" duration="9933000" />
     </task>
     <task id="LOCAL-00001" summary="jwt with firebase initiated.&#10;Created base classes and some logic to them.">
       <option name="closed" value="true" />
@@ -253,7 +288,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713735332855</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="clean up">
+      <option name="closed" value="true" />
+      <created>1713743986290</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713743986290</updated>
+    </task>
+    <task id="LOCAL-00006" summary="meergee">
+      <option name="closed" value="true" />
+      <created>1713744024107</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713744024107</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,7 +329,9 @@
     <MESSAGE value="Set up of firebase.&#10;Base entities created&#10;Some ORM functionality in place&#10;Understood the clean architecture and CQRS pattern" />
     <MESSAGE value="Forgotten files of last commit... oopsie" />
     <MESSAGE value="EF setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="EF setup" />
+    <MESSAGE value="clean up" />
+    <MESSAGE value="meergee" />
+    <option name="LAST_COMMIT_MESSAGE" value="meergee" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

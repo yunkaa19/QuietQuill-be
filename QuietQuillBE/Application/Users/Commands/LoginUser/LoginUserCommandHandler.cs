@@ -14,6 +14,6 @@ internal sealed class LoginUserCommandHandler : IRequestHandler<LoginUserCommand
     
     public async Task<string> Handle(LoginUserCommand request, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        return await _jwtProvider.GetForCredentialsAsync(request.Email, request.Password);
     }
 }

@@ -3,5 +3,5 @@ using MediatR;
 
 namespace Application.Users.Commands.RegisterUser;
 
-public record RegisterUserCommand(string Email, string Password, string Username) : ICommand<string>;
+public record RegisterUserCommand(string Email, string Password) : ICommand<string>;
 

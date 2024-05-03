@@ -69,7 +69,7 @@ public static class DependencyInjection
         });
         services.AddSingleton<IAuthenticationService, AuthenticationService>();
         
-        services.AddHttpClient<IJWTProvider, IJWTProvider>((sp ,httpClient) =>
+        services.AddHttpClient<IJWTProvider, JWTProvider>((sp ,httpClient) =>
         {
             var config = sp.GetRequiredService<IConfiguration>();
             
