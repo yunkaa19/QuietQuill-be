@@ -24,22 +24,23 @@ public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, s
         _authenticationService = authService;
         _validator = validator;
     }
-    
     public async Task<string> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
     {
-        var validationResult = _validator.ValidateAsync(request);
-        if (!validationResult.Result.IsValid)
+        var validationResult = await _validator.ValidateAsync(request, cancellationToken);
+        if (!validationResult.IsValid)
         {
-            throw new ValidationException(validationResult.Result.Errors);
+            throw new ValidationException(validationResult.Errors);
         }
-        
-        var IdentityID = await _authenticationService.RegisterAsync(request.Email, request.Password);
-        var user = new User(Guid.NewGuid(),"null" , request.Email, request.Email, IdentityID);
-
-        _userRepository.AddAsync(user);
-        
+        var user = new User(Guid.NewGuid(), "null", request.Email, request.Email, null);
+        bool isAdded = await _userRepository.AddAsync(user);
+        if (!isAdded)
+        {
+            throw new Exception("User already exists.");
+        }
+        var identityID = await _authenticationService.RegisterAsync(request.Email, request.Password);
+        user.UpdateIdentityId(identityID);
+        await _userRepository.UpdateAsync(user);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
-
-        return IdentityID;
+        return identityID;
     }
 }

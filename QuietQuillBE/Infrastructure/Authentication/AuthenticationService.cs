@@ -5,6 +5,7 @@ namespace Infrastructure.Authentication;
 
 internal sealed class AuthenticationService : IAuthenticationService
 {
+    
     public async Task<string> RegisterAsync(string email, string password)
     {
         
@@ -31,13 +32,16 @@ internal sealed class AuthenticationService : IAuthenticationService
 
     public async Task<string> ChangePasswordAsync(string email, string oldPassword, string newPassword)
     {
-        throw new NotImplementedException();
-        // var user = await FirebaseAuth.DefaultInstance.GetUserByEmailAsync(email);
-        // await FirebaseAuth.DefaultInstance.UpdateUserAsync(user.Uid, new UserRecordArgs
-        // {
-        //     Password = newPassword
-        // });
-        //
-        // return "Password changed successfully";
+        var user = await FirebaseAuth.DefaultInstance.GetUserByEmailAsync(email);
+
+        var userArgs = new UserRecordArgs
+        {
+            Uid = user.Uid,
+            Email = email,
+            Password = newPassword
+        };
+        await FirebaseAuth.DefaultInstance.UpdateUserAsync(userArgs);
+        return user.Email;
     }
+    
 }

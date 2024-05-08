@@ -10,23 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34c601c2-b0c6-433f-91ec-4e3fd6b709d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Users/Commands/ForgotPassword/ForgotPasswordCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Users/Commands/ForgotPassword/ForgotPasswordCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Users/Commands/ForgotPassword/ForgotPasswordRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Users/Commands/ForgotPassword/ForgotPasswordValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QuietQuillAPI/MiddleWare/ValidationExceptionHandlerMiddleware.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Users/Commands/ChangePassword/ChangePasswordCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Users/Commands/ChangePassword/ChangePasswordCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Users/Commands/ChangePassword/ChangePasswordRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Users/Commands/ChangePassword/ChangePasswordValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.github/workflows/CI.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Abstraction/Authentication/IAuthenticationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Abstraction/Authentication/IAuthenticationService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/LoginUser/LoginUserCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/LoginUser/LoginUserCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegsterUserValidator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Admin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Admin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Repositories/IUserRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Authentication/AuthenticationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Authentication/AuthenticationService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/Endpoints/JournalController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/Endpoints/JournalController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QuietQuillAPI/Endpoints/Users.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/Endpoints/Users.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QuietQuillAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/QuietQuillAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/QuietQuillAPI.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,9 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/649f9a5315084d038b64e29ea11b1fb5b910/46/aeb247cf/IConfiguration.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d06c1e5bad3c480b9c3eee62e2143d7848000/30/33890b91/AbstractFirebaseAuth.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e4918c8ac7be482996b82eec990f156d11200/c8/bfcd38c5/ISender.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -255,6 +256,13 @@
       <workItem from="1714033370573" duration="3643000" />
       <workItem from="1714042166695" duration="1588000" />
       <workItem from="1714702316745" duration="9933000" />
+      <workItem from="1714768302031" duration="356000" />
+      <workItem from="1714772219717" duration="4071000" />
+      <workItem from="1714875706315" duration="785000" />
+      <workItem from="1714999819532" duration="2281000" />
+      <workItem from="1715097979576" duration="707000" />
+      <workItem from="1715118710622" duration="950000" />
+      <workItem from="1715132033735" duration="2354000" />
     </task>
     <task id="LOCAL-00001" summary="jwt with firebase initiated.&#10;Created base classes and some logic to them.">
       <option name="closed" value="true" />
@@ -304,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713744024107</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Login and register controller done, JWT is generated.&#10;&#10;Next step: Remake claims">
+      <option name="closed" value="true" />
+      <created>1714768510143</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1714768510143</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +347,8 @@
     <MESSAGE value="EF setup" />
     <MESSAGE value="clean up" />
     <MESSAGE value="meergee" />
-    <option name="LAST_COMMIT_MESSAGE" value="meergee" />
+    <MESSAGE value="Login and register controller done, JWT is generated.&#10;&#10;Next step: Remake claims" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login and register controller done, JWT is generated.&#10;&#10;Next step: Remake claims" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

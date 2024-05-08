@@ -14,7 +14,7 @@ public class Admin : User
             Username = username;
             PasswordHash = passwordHash;
             Email = email;
-            IdentityID = identityId;
+            base.IdentityId = identityId;
 
 
             Role = "Admin";

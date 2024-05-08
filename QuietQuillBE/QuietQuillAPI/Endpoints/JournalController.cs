@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,7 +9,7 @@ namespace QuietQuillBE.Endpoints
     public class JournalController : ControllerBase
     {
         
-        [HttpGet]
+        [HttpGet, Authorize]
         public IActionResult Get()
         {
             return Ok("Hello World");

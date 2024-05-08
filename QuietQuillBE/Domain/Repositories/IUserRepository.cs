@@ -9,6 +9,7 @@ public interface IUserRepository
     Task UpdateAsync(User user);
     Task DeleteAsync(User user);
     Task<bool> UserExists(string email);
+    Task<User> GetUserByEmail(string email);
     
     
 }

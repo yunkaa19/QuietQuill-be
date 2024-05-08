@@ -78,20 +78,13 @@ public static class DependencyInjection
 
         services.AddAuthentication().AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, jwtOptions =>
         {
+            jwtOptions.Authority = configuration["Authentication:ValidIssuer"];
             jwtOptions.Audience = configuration["Authentication:Audience"];
-            jwtOptions.TokenValidationParameters.ValidIssuer = configuration["Authentication:Issuer"];
+            jwtOptions.TokenValidationParameters.ValidIssuer = configuration["Authentication:ValidIssuer"];
             
-            jwtOptions.Authority = "https://securetoken.google.com/your-project-id";
-            jwtOptions.TokenValidationParameters = new TokenValidationParameters
-            {
-                ValidateIssuer = true,
-                ValidIssuer = "https://securetoken.google.com/your-project-id",
-                ValidateAudience = true,
-                ValidAudience = "your-project-id",
-                ValidateLifetime = true
-            };
+            
         });
-        
+        services.AddAuthorization();
         return services;
     }
 }
