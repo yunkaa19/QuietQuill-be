@@ -13,7 +13,7 @@ public class User
     public string Email { get; set; }
     public string Role { get; protected set; }
     
-    public string IdentityId { get; set; }
+    public string IdentityID { get; set; }
     #endregion
 
     #region Relationships
@@ -41,7 +41,7 @@ public class User
         
         Role = "User";
         
-        this.IdentityId = identityId;
+        this.IdentityID = identityId;
         JournalEntries = new List<JournalEntry>();
         Reminders = new List<Reminder>();
         Habits = new List<Habit>();
@@ -56,7 +56,7 @@ public class User
     
     public void UpdateIdentityId(string identityId)
     {
-        this.IdentityId = identityId;
+        this.IdentityID = identityId;
     }
     public void setPassword(string passwordHash)
     {

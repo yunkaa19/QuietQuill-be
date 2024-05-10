@@ -28,7 +28,7 @@ public class JournalEntryRepository : IJournalEntryRepository
         
     }
 
-    public JournalEntry GetJournalEntryById(int journalEntryId)
+    public JournalEntry GetJournalEntryById(string journalEntryId)
     {
         var journalEntry = _dbContext.JournalEntries.Find(journalEntryId);
         if (journalEntry == null)
@@ -62,12 +62,17 @@ public class JournalEntryRepository : IJournalEntryRepository
         }
     }
 
-    public bool DeleteJournalEntry(JournalEntry journalEntry)
+    public bool DeleteJournalEntry(string EntryId)
     {
         try
         {
+            var journalEntry = _dbContext.JournalEntries.Find(EntryId);
+            if (journalEntry == null)
+            {
+                throw new Exception($"No journal entry found with ID {EntryId}");
+            }
             _dbContext.JournalEntries.Remove(journalEntry);
-            return true;
+            return true; 
         }
         catch (Exception e)
         {

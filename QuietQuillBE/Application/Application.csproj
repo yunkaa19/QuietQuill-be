@@ -21,8 +21,18 @@
 
     <ItemGroup>
       <Folder Include="Behavior\" />
+      <Folder Include="Journals\Events\" />
+      <Folder Include="Journals\Interfaces\" />
+      <Folder Include="Meditation\Commands\" />
+      <Folder Include="Meditation\DTOs\" />
+      <Folder Include="Meditation\Events\" />
+      <Folder Include="Meditation\Interfaces\" />
+      <Folder Include="Meditation\Queries\" />
       <Folder Include="Users\Events\" />
       <Folder Include="Users\Interfaces\" />
+      <Folder Include="_Example\DTOs\" />
+      <Folder Include="_Example\Events\" />
+      <Folder Include="_Example\Interfaces\" />
     </ItemGroup>
 
 </Project>
