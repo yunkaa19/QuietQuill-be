@@ -12,6 +12,12 @@ jobs:
   build-and-analyze:
     runs-on: self-hosted
 
+    env:
+      DOTNET_ROOT: ${{ github.workspace }}/.dotnet
+      PATH: ${{ github.workspace }}/.dotnet:$PATH
+      SONAR_HOST_URL: http://localhost:9000
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -20,42 +26,29 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.x'
-        env:
-          DOTNET_ROOT: ${{ github.workspace }}/.dotnet
-          PATH: ${{ github.workspace }}/.dotnet:$PATH
+
+      - name: Debug Bash and Environment
+        run: |
+          echo "Testing bash availability"
+          which bash
+          echo "DOTNET_ROOT: $DOTNET_ROOT"
+          echo "PATH: $PATH"
 
       - name: Install dependencies
         run: dotnet restore
-        env:
-          DOTNET_ROOT: ${{ github.workspace }}/.dotnet
-          PATH: ${{ github.workspace }}/.dotnet:$PATH
 
       - name: Build project
         run: dotnet build --no-restore --configuration Release
-        env:
-          DOTNET_ROOT: ${{ github.workspace }}/.dotnet
-          PATH: ${{ github.workspace }}/.dotnet:$PATH
 
       - name: Run tests
         run: dotnet test --no-build --configuration Release
-        env:
-          DOTNET_ROOT: ${{ github.workspace }}/.dotnet
-          PATH: ${{ github.workspace }}/.dotnet:$PATH
 
       - name: Prepare SonarQube Scanner
         run: |
           dotnet tool install --global dotnet-sonarscanner
           export PATH="$PATH:$HOME/.dotnet/tools"
-        env:
-          DOTNET_ROOT: ${{ github.workspace }}/.dotnet
-          PATH: ${{ github.workspace }}/.dotnet:$PATH
 
       - name: Run SonarQube Scan
-        env:
-          SONAR_HOST_URL: http://localhost:9000
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          DOTNET_ROOT: ${{ github.workspace }}/.dotnet
-          PATH: ${{ github.workspace }}/.dotnet:$PATH
         run: |
           dotnet-sonarscanner begin /k:"my_project_key" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN"
           dotnet build
