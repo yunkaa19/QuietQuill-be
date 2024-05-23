@@ -27,6 +27,13 @@ jobs:
         with:
           dotnet-version: '8.x'
 
+      - name: Debug Bash and Environment
+        run: |
+          echo "Testing bash availability"
+          which bash
+          which tar
+          echo "DOTNET_ROOT: $DOTNET_ROOT"
+          echo "PATH: $PATH"
 
       - name: Install dependencies
         run: dotnet restore QuietQuillBE/QuietQuillBE.sln
@@ -41,9 +48,10 @@ jobs:
         run: |
           dotnet tool install --global dotnet-sonarscanner
           export PATH="$PATH:$HOME/.dotnet/tools"
+          echo "PATH after tool installation: $PATH"
 
       - name: Run SonarQube Scan
         run: |
-          dotnet-sonarscanner begin /k:"my_project_key" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN" /s:"QuietQuillBE/QuietQuillBE.sln"
+          dotnet sonarscanner begin /k:"my_project_key" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN" /s:"QuietQuillBE/QuietQuillBE.sln"
           dotnet build QuietQuillBE/QuietQuillBE.sln
-          dotnet-sonarscanner end /d:sonar.login="$SONAR_TOKEN"
+          dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
