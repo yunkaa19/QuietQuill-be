@@ -15,7 +15,7 @@ jobs:
     env:
       DOTNET_ROOT: ${{ github.workspace }}/.dotnet
       PATH: ${{ github.workspace }}/.dotnet:$PATH:/usr/bin:/home/runner/.dotnet/tools
-      SONAR_HOST_URL: http://localhost:9000
+      SONAR_HOST_URL: http://sonarqube:9000
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
     steps:
