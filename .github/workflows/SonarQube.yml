@@ -1,4 +1,4 @@
-name: CI
+name: SonarScanner
 
 on:
   push:
@@ -12,6 +12,13 @@ jobs:
   build-and-analyze:
     runs-on: self-hosted
 
+    env:
+      DOTNET_ROOT: ${{ github.workspace }}/.dotnet
+      PATH: ${{ github.workspace }}/.dotnet:$PATH:/usr/bin:/home/runner/.dotnet/tools:/usr/lib/jvm/java-17-openjdk-amd64/bin
+      JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
+      SONAR_HOST_URL: http://sonarqube:9000
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -20,43 +27,25 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.x'
-        env:
-          DOTNET_ROOT: ${{ github.workspace }}/.dotnet
-          PATH: ${{ github.workspace }}/.dotnet:$PATH
 
       - name: Install dependencies
-        run: dotnet restore
-        env:
-          DOTNET_ROOT: ${{ github.workspace }}/.dotnet
-          PATH: ${{ github.workspace }}/.dotnet:$PATH
+        run: dotnet restore QuietQuillBE/QuietQuillBE.sln
 
       - name: Build project
-        run: dotnet build --no-restore --configuration Release
-        env:
-          DOTNET_ROOT: ${{ github.workspace }}/.dotnet
-          PATH: ${{ github.workspace }}/.dotnet:$PATH
+        run: dotnet build --no-restore --configuration Release QuietQuillBE/QuietQuillBE.sln
 
       - name: Run tests
-        run: dotnet test --no-build --configuration Release
-        env:
-          DOTNET_ROOT: ${{ github.workspace }}/.dotnet
-          PATH: ${{ github.workspace }}/.dotnet:$PATH
+        run: dotnet test --no-build --configuration Release QuietQuillBE/QuietQuillBE.sln
 
       - name: Prepare SonarQube Scanner
         run: |
           dotnet tool install --global dotnet-sonarscanner
           export PATH="$PATH:$HOME/.dotnet/tools"
-        env:
-          DOTNET_ROOT: ${{ github.workspace }}/.dotnet
-          PATH: ${{ github.workspace }}/.dotnet:$PATH
+          echo "PATH after tool installation: $PATH"
 
       - name: Run SonarQube Scan
-        env:
-          SONAR_HOST_URL: http://localhost:9000
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          DOTNET_ROOT: ${{ github.workspace }}/.dotnet
-          PATH: ${{ github.workspace }}/.dotnet:$PATH
         run: |
-          dotnet-sonarscanner begin /k:"my_project_key" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN"
-          dotnet build
-          dotnet-sonarscanner end /d:sonar.login="$SONAR_TOKEN"
+          export PATH="$PATH:$HOME/.dotnet/tools"
+          dotnet sonarscanner begin /k:"QuietQuill-be" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN"
+          dotnet build QuietQuillBE/QuietQuillBE.sln
+          dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
