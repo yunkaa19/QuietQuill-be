@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="@localhost" uuid="de2a5ec3-b2ad-4ae2-b021-fa56b9e25abc">
+    <data-source source="LOCAL" name="XAMPP DB" uuid="de2a5ec3-b2ad-4ae2-b021-fa56b9e25abc">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mariadb://localhost:3306/</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="@localhost [2]" uuid="b279c857-d2a5-484c-9cac-96ea33e211d5">
+    <data-source source="LOCAL" name="DockerDB" uuid="b279c857-d2a5-484c-9cac-96ea33e211d5">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>

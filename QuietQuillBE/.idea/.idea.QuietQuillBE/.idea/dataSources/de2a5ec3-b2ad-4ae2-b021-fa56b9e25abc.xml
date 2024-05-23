@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="@localhost">
+<dataSource name="XAMPP DB">
   <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.52">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>

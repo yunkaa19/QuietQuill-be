@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="RD-241.14494.325">
-    <data-source name="@localhost" uuid="de2a5ec3-b2ad-4ae2-b021-fa56b9e25abc">
+  <component name="dataSourceStorageLocal" created-in="RD-241.15989.179">
+    <data-source name="XAMPP DB" uuid="de2a5ec3-b2ad-4ae2-b021-fa56b9e25abc">
       <database-info product="MariaDB" version="10.4.32-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="3.0.7" dbms="MARIADB" exact-version="10.4.32" exact-driver-version="3.0">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
@@ -15,11 +15,10 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
-    <data-source name="@localhost [2]" uuid="b279c857-d2a5-484c-9cac-96ea33e211d5">
+    <data-source name="DockerDB" uuid="b279c857-d2a5-484c-9cac-96ea33e211d5">
       <database-info product="MySQL" version="8.0.21" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)" dbms="MYSQL" exact-version="8.0.21" exact-driver-version="8.2">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
-        <jdbc-catalog-is-schema>true</jdbc-catalog-is-schema>
       </database-info>
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <secret-storage>master_key</secret-storage>

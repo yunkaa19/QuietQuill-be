@@ -56,7 +56,10 @@ public class User
     
     public void UpdateIdentityId(string identityId)
     {
-        this.IdentityID = identityId;
+        if(identityId == null)
+            throw new ArgumentNullException(nameof(identityId));
+        
+        IdentityID = identityId;
     }
     public void setPassword(string passwordHash)
     {
@@ -152,6 +155,8 @@ public class User
         }
         UserQuizRecords.Remove(userQuizRecord);
     }
+    
+    
     
     #endregion
 }

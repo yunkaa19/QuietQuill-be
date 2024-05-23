@@ -10,39 +10,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34c601c2-b0c6-433f-91ec-4e3fd6b709d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Commands/CreateEntry/CreateEntryCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Commands/CreateEntry/CreateEntryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Commands/CreateEntry/CreateEntryRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Commands/CreateEntry/CreateEntryValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Commands/DeleteEntry/DeleteEntryCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Commands/DeleteEntry/DeleteEntryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Commands/DeleteEntry/DeleteEntryRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Commands/DeleteEntry/DeleteEntryValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Commands/UpdateEntry/UpdateEntryCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Commands/UpdateEntry/UpdateEntryCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Commands/UpdateEntry/UpdateEntryCommandRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Commands/UpdateEntry/UpdateEntryCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/DTOs/JournalDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Queries/GetJournalsByMonth/GetJournalsByMonthHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Queries/GetJournalsByMonth/GetJournalsByMonthQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Queries/GetJournalsByMonth/GetJournalsByMonthResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.github/workflows/CI.yml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/CreateMeditation/CreateMeditationCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/CreateMeditation/CreateMeditationCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/CreateMeditation/CreateMeditationCommandRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/CreateMeditation/CreateMeditationCommandValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/DeleteMeditation/DeleteMeditationCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/DeleteMeditation/DeleteMeditationCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/DeleteMeditation/DeleteMeditationCommandRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/DeleteMeditation/DeleteMeditationCommandValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/UpdateMeditation/UpdateMeditationCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/UpdateMeditation/UpdateMeditationCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/UpdateMeditation/UpdateMeditationCommandRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/UpdateMeditation/UpdateMeditationCommandValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/DTOs/MeditationSessionDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/DTOs/UserMeditationRecordDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/Queries/GetMeditation/GetMeditationHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/Queries/GetMeditation/GetMeditationQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Meditation/Queries/GetMeditation/GetMeditationResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Exceptions/Meditation/MeditationNotFoundException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources/de2a5ec3-b2ad-4ae2-b021-fa56b9e25abc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources/de2a5ec3-b2ad-4ae2-b021-fa56b9e25abc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Admin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Admin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Self-monitoring journal/JournalEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Self-monitoring journal/JournalEntry.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Self-monitoring journal/Mood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Self-monitoring journal/Mood.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/LoginUser/LoginUserCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/LoginUser/LoginUserCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/LoginUser/LoginUserValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/LoginUser/LoginUserValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Meditation/MeditationSession.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Meditation/MeditationSession.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IJournalEntryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Repositories/IJournalEntryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IMeditationSessionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Repositories/IMeditationSessionRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/Repositories/IMoodRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Repositories/IMoodRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/JournalEntryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/JournalEntryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/Endpoints/JournalController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/Endpoints/JournalController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Repositories/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Authentication/JWTProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Authentication/JWTProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/MeditationSessionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/MeditationSessionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,6 +74,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/649f9a5315084d038b64e29ea11b1fb5b910/46/aeb247cf/IConfiguration.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d06c1e5bad3c480b9c3eee62e2143d7848000/30/33890b91/AbstractFirebaseAuth.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e4918c8ac7be482996b82eec990f156d11200/c8/bfcd38c5/ISender.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Application/_Example/Queries/ExampleQuery/ExampleResponse.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -89,41 +92,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.QuietQuillBE: IIS Express.executor": "Run",
-    ".NET Launch Settings Profile.QuietQuillBE: http.executor": "Run",
-    "Docker.QuietQuillAPI/Dockerfile.executor": "Run",
-    "Docker.docker-compose.yml.bedb: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.fe: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.quietquillapi: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment (1).executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.completion",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.QuietQuillBE: IIS Express.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.QuietQuillBE: http.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.QuietQuillAPI/Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.bedb: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.fe: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.quietquillapi: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment (1).executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb",
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;,
+      &quot;mysql&quot;
     ],
-    "rider.external.source.directories": [
-      "C:\\Users\\Yunuz\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Yunuz\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Yunuz\\AppData\\Local\\Symbols\\src"
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Yunuz\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Yunuz\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Yunuz\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
-  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
+}</component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.QuietQuillBE: http">
     <configuration name="QuietQuillBE: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/QuietQuillAPI/QuietQuillAPI.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -276,7 +279,13 @@
       <workItem from="1715132033735" duration="9498000" />
       <workItem from="1715247019287" duration="12393000" />
       <workItem from="1715362353078" duration="3331000" />
-      <workItem from="1715373767115" duration="4448000" />
+      <workItem from="1715373767115" duration="4872000" />
+      <workItem from="1715599825313" duration="2308000" />
+      <workItem from="1715619058427" duration="1497000" />
+      <workItem from="1715692801868" duration="8458000" />
+      <workItem from="1715820022667" duration="10766000" />
+      <workItem from="1715970417494" duration="591000" />
+      <workItem from="1716256448513" duration="6948000" />
     </task>
     <task id="LOCAL-00001" summary="jwt with firebase initiated.&#10;Created base classes and some logic to them.">
       <option name="closed" value="true" />
@@ -342,7 +351,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715134568439</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Journal Entry CRUD operations. Docker compose working :))">
+      <option name="closed" value="true" />
+      <created>1715385203542</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715385203542</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +388,8 @@
     <MESSAGE value="meergee" />
     <MESSAGE value="Login and register controller done, JWT is generated.&#10;&#10;Next step: Remake claims" />
     <MESSAGE value="Updating password is now possible." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating password is now possible." />
+    <MESSAGE value="Journal Entry CRUD operations. Docker compose working :))" />
+    <option name="LAST_COMMIT_MESSAGE" value="Journal Entry CRUD operations. Docker compose working :))" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

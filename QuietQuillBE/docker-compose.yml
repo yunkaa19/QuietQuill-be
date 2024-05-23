@@ -2,7 +2,7 @@
 services:
   quietquillapi:
     ports:
-      - "8000:8000"
+      - "8080:8080"
     build:
       context: .
       dockerfile: QuietQuillAPI/Dockerfile

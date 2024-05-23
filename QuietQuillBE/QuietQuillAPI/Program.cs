@@ -43,6 +43,20 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
+
+// Add CORS policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("NgOrigin",
+        policyBuilder =>
+        {
+            policyBuilder.WithOrigins("http://localhost:5173", "http://localhost:3000", "http://localhost:8080", "http://localhost:5103")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials();
+        });
+});
+
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddPresentation();
 builder.Services.AddApplication();
@@ -62,6 +76,7 @@ if (app.Environment.IsDevelopment())
 app.UseMiddleware<ValidationExceptionHandlerMiddleware>();
 app.UseHttpsRedirection();
 
+app.UseCors("NgOrigin");
 
 app.MapControllers();
 

@@ -21,16 +21,15 @@ public  class UserRepository : IUserRepository
         return user ?? throw new UserNotFoundException(userId);
     }
 
-    public async Task<bool> AddAsync(User user)
+    public async Task AddAsync(User user)
     {
-        var existingUser = await _dbContext.Users.AnyAsync(u => u.Email == user.Email);
-        if (!existingUser)
+        if (user.IdentityID == null)
         {
-            _dbContext.Users.Add(user);
-            await _dbContext.SaveChangesAsync();
-            return true;
+            throw new ArgumentException("IdentityID cannot be zero.");
         }
-        return false;
+
+        _dbContext.Users.Add(user);
+        await _dbContext.SaveChangesAsync();
     }
 
     public async Task UpdateAsync(User user)

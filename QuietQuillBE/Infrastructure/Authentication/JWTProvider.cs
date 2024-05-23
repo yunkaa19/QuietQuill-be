@@ -19,7 +19,8 @@ internal sealed class JWTProvider : IJWTProvider
         var response = await _httpClient.PostAsJsonAsync("", request);
         
         var authToken = await response.Content.ReadFromJsonAsync<AuthToken>();
-
+        
+        
         return authToken.IdToken;
     }
 }

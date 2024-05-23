@@ -23,11 +23,13 @@
       <Folder Include="Behavior\" />
       <Folder Include="Journals\Events\" />
       <Folder Include="Journals\Interfaces\" />
-      <Folder Include="Meditation\Commands\" />
-      <Folder Include="Meditation\DTOs\" />
       <Folder Include="Meditation\Events\" />
       <Folder Include="Meditation\Interfaces\" />
-      <Folder Include="Meditation\Queries\" />
+      <Folder Include="Reminders\Commands\" />
+      <Folder Include="Reminders\DTOs\" />
+      <Folder Include="Reminders\Events\" />
+      <Folder Include="Reminders\Interfaces\" />
+      <Folder Include="Reminders\Queries\" />
       <Folder Include="Users\Events\" />
       <Folder Include="Users\Interfaces\" />
       <Folder Include="_Example\DTOs\" />

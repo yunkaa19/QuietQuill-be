@@ -26,21 +26,35 @@ public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, s
     }
     public async Task<string> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
     {
+        // Validate the request
         var validationResult = await _validator.ValidateAsync(request, cancellationToken);
         if (!validationResult.IsValid)
         {
             throw new ValidationException(validationResult.Errors);
         }
+
+        // Create the user entity with a placeholder for IdentityID
         var user = new User(Guid.NewGuid(), "null", request.Email, request.Email, null);
-        bool isAdded = await _userRepository.AddAsync(user);
-        if (!isAdded)
+
+        // Check if user already exists
+        if (await _userRepository.UserExists(user.Email))
         {
             throw new Exception("User already exists.");
         }
+
+        // Register the user in the authentication service and get the IdentityID
         var identityID = await _authenticationService.RegisterAsync(request.Email, request.Password);
+
+        // Update the user entity with the IdentityID
         user.UpdateIdentityId(identityID);
-        await _userRepository.UpdateAsync(user);
+
+        // Save the user entity to the repository
+        await _userRepository.AddAsync(user);
+
+        // Commit the changes
         await _unitOfWork.SaveChangesAsync(cancellationToken);
+
         return identityID;
     }
+
 }
