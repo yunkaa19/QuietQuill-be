@@ -14,7 +14,7 @@ jobs:
 
     env:
       DOTNET_ROOT: ${{ github.workspace }}/.dotnet
-      PATH: ${{ github.workspace }}/.dotnet:$PATH
+      PATH: ${{ github.workspace }}/.dotnet:$PATH:/usr/bin
       SONAR_HOST_URL: http://localhost:9000
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
@@ -31,6 +31,7 @@ jobs:
         run: |
           echo "Testing bash availability"
           which bash
+          which tar
           echo "DOTNET_ROOT: $DOTNET_ROOT"
           echo "PATH: $PATH"
 
