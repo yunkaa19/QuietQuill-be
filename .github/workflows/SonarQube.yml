@@ -14,7 +14,8 @@ jobs:
 
     env:
       DOTNET_ROOT: ${{ github.workspace }}/.dotnet
-      PATH: ${{ github.workspace }}/.dotnet:$PATH:/usr/bin:/home/runner/.dotnet/tools
+      PATH: ${{ github.workspace }}/.dotnet:$PATH:/usr/bin:/home/runner/.dotnet/tools:/usr/lib/jvm/java-17-openjdk-amd64/bin
+      JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
       SONAR_HOST_URL: http://sonarqube:9000
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
@@ -39,8 +40,8 @@ jobs:
       - name: Prepare SonarQube Scanner
         run: |
           dotnet tool install --global dotnet-sonarscanner
-          echo "PATH after tool installation: $PATH:$HOME/.dotnet/tools"
           export PATH="$PATH:$HOME/.dotnet/tools"
+          echo "PATH after tool installation: $PATH"
 
       - name: Run SonarQube Scan
         run: |
