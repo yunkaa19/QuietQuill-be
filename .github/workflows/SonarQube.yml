@@ -39,12 +39,12 @@ jobs:
       - name: Prepare SonarQube Scanner
         run: |
           dotnet tool install --global dotnet-sonarscanner
+          echo "PATH after tool installation: $PATH:$HOME/.dotnet/tools"
           export PATH="$PATH:$HOME/.dotnet/tools"
-          echo "PATH after tool installation: $PATH"
 
       - name: Run SonarQube Scan
         run: |
           export PATH="$PATH:$HOME/.dotnet/tools"
-          dotnet sonarscanner begin /k:"QuietQuill-be" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN" /s:"QuietQuillBE/QuietQuillBE.sln"
+          dotnet sonarscanner begin /k:"QuietQuill-be" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN"
           dotnet build QuietQuillBE/QuietQuillBE.sln
           dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
