@@ -9,44 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34c601c2-b0c6-433f-91ec-4e3fd6b709d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/CreateMeditation/CreateMeditationCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/CreateMeditation/CreateMeditationCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/CreateMeditation/CreateMeditationCommandRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/CreateMeditation/CreateMeditationCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/DeleteMeditation/DeleteMeditationCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/DeleteMeditation/DeleteMeditationCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/DeleteMeditation/DeleteMeditationCommandRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/DeleteMeditation/DeleteMeditationCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/UpdateMeditation/UpdateMeditationCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/UpdateMeditation/UpdateMeditationCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/UpdateMeditation/UpdateMeditationCommandRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/Commands/UpdateMeditation/UpdateMeditationCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/DTOs/MeditationSessionDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/DTOs/UserMeditationRecordDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/Queries/GetMeditation/GetMeditationHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/Queries/GetMeditation/GetMeditationQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Meditation/Queries/GetMeditation/GetMeditationResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Exceptions/Meditation/MeditationNotFoundException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources/de2a5ec3-b2ad-4ae2-b021-fa56b9e25abc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources/de2a5ec3-b2ad-4ae2-b021-fa56b9e25abc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/LoginUser/LoginUserCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/LoginUser/LoginUserCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/LoginUser/LoginUserValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/LoginUser/LoginUserValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Commands/RegisterUser/RegisterUserCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Meditation/MeditationSession.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Meditation/MeditationSession.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IMeditationSessionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Repositories/IMeditationSessionRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IMoodRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Repositories/IMoodRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Repositories/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Repositories/IUserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Authentication/JWTProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Authentication/JWTProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/MeditationSessionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/MeditationSessionRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/UserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-    </list>
+    <list default="true" id="34c601c2-b0c6-433f-91ec-4e3fd6b709d0" name="Changes" comment="Merge" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -286,6 +249,7 @@
       <workItem from="1715820022667" duration="10766000" />
       <workItem from="1715970417494" duration="591000" />
       <workItem from="1716256448513" duration="6948000" />
+      <workItem from="1716425342566" duration="303000" />
     </task>
     <task id="LOCAL-00001" summary="jwt with firebase initiated.&#10;Created base classes and some logic to them.">
       <option name="closed" value="true" />
@@ -359,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715385203542</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Meditation is now accessible, need to create controller">
+      <option name="closed" value="true" />
+      <created>1716425446841</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716425446841</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +361,8 @@
     <MESSAGE value="Login and register controller done, JWT is generated.&#10;&#10;Next step: Remake claims" />
     <MESSAGE value="Updating password is now possible." />
     <MESSAGE value="Journal Entry CRUD operations. Docker compose working :))" />
-    <option name="LAST_COMMIT_MESSAGE" value="Journal Entry CRUD operations. Docker compose working :))" />
+    <MESSAGE value="Meditation is now accessible, need to create controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Meditation is now accessible, need to create controller" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

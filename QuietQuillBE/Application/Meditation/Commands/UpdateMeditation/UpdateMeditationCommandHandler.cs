@@ -1,4 +1,4 @@
-﻿using Application._Example.Commands.ExampleCommands;
+﻿
 using Application.Meditation.DTOs;
 using Domain.Abstraction;
 using Domain.Exceptions.Meditation;

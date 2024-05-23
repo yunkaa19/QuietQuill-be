@@ -1,4 +1,4 @@
-﻿using Application._Example.Queries.ExampleQuery;
+﻿
 using Application.Abstractions.Messaging;
 
 namespace Application.Journals.Queries.GetJournalsByMonth;
