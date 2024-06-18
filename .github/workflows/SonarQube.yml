@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-and-analyze:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted  # Ensure you have a self-hosted runner configured
 
     env:
       DOTNET_ROOT: ${{ github.workspace }}/.dotnet
@@ -23,7 +23,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up .NET SDK
+      - name: Set up .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.x'
@@ -37,22 +37,9 @@ jobs:
       - name: Install Coverlet
         run: dotnet tool install --global coverlet.console
 
-      - name: Create TestResults directory
-        run: mkdir -p ./TestResults
-
       - name: Run tests with coverage
         run: |
-          echo "Running tests with coverage..."
-          dotnet test --no-build --configuration Release QuietQuillBE/QuietQuillBE.sln /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=$(pwd)/TestResults/coverage.opencover.xml --logger "trx;LogFileName=$(pwd)/TestResults/TestResults.trx" --verbosity detailed
-          echo "Listing contents of TestResults directory:"
-          ls -R ./TestResults/
-          echo "Checking for coverage file..."
-          if [ -f "$(pwd)/TestResults/coverage.opencover.xml" ]; then
-            echo "Coverage file exists"
-          else
-            echo "Coverage file does not exist"
-            exit 1
-          fi
+          dotnet test --no-build --configuration Release QuietQuillBE/QuietQuillBE.sln /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./TestResults/
 
       - name: Prepare SonarQube Scanner
         run: |
@@ -63,6 +50,6 @@ jobs:
       - name: Run SonarQube Scan
         run: |
           export PATH="$PATH:$HOME/.dotnet/tools"
-          dotnet sonarscanner begin /k:"QuietQuill-be" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN" /d:sonar.cs.opencover.reportsPaths="$(pwd)/TestResults/coverage.opencover.xml"
+          dotnet sonarscanner begin /k:"QuietQuill-be" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN" /d:sonar.cs.opencover.reportsPaths=**/TestResults/coverage.opencover.xml
           dotnet build QuietQuillBE/QuietQuillBE.sln
           dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
