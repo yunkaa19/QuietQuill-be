@@ -39,7 +39,10 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-          dotnet test --no-build --configuration Release QuietQuillBE/QuietQuillBE.sln /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./TestResults/
+          dotnet test --no-build --configuration Release QuietQuillBE/QuietQuillBE.sln /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./TestResults/ --logger "trx;LogFileName=TestResults.trx"
+          echo "Listing contents of TestResults directory:"
+          ls -la ./TestResults/
+          cat ./TestResults/coverage.opencover.xml
 
       - name: Prepare SonarQube Scanner
         run: |
