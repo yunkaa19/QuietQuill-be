@@ -47,6 +47,7 @@ jobs:
           dotnet test --no-build --configuration Release QuietQuillBE/QuietQuillBE.sln /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./TestResults/coverage.opencover.xml --logger "trx;LogFileName=./TestResults/TestResults.trx"
           echo "Listing contents of TestResults directory:"
           ls -la ./TestResults/
+          echo "Checking for coverage file..."
           if [ -f "./TestResults/coverage.opencover.xml" ]; then
             echo "Coverage file exists"
           else
