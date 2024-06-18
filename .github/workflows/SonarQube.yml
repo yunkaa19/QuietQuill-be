@@ -55,6 +55,21 @@ jobs:
             exit 1
           fi
 
+      - name: Run Coverlet separately
+        run: |
+          export PATH="$PATH:$HOME/.dotnet/tools"
+          echo "Running Coverlet separately..."
+          coverlet ./QuietQuillBE/ArchitectureTests/bin/Release/net8.0/ArchitectureTests.dll --target "dotnet" --targetargs "test --no-build --configuration Release QuietQuillBE/QuietQuillBE.sln" --format opencover --output ./TestResults/coverage.opencover.xml
+          echo "Listing contents of TestResults directory after running Coverlet separately:"
+          ls -la ./TestResults/
+          if [ -f "./TestResults/coverage.opencover.xml" ]; then
+            echo "Coverage file exists after running Coverlet separately"
+            cat ./TestResults/coverage.opencover.xml
+          else
+            echo "Coverage file does not exist even after running Coverlet separately"
+            exit 1
+          fi
+
       - name: Prepare SonarQube Scanner
         run: |
           dotnet tool install --global dotnet-sonarscanner
