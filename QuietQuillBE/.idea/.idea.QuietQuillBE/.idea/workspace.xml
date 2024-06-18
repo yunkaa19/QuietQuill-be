@@ -9,57 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34c601c2-b0c6-433f-91ec-4e3fd6b709d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Abstraction/Data/IDbQueryExecutor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Queries/GetJournalEntryByID/GetJournalEntryByIDHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Queries/GetJournalEntryByID/GetJournalEntryByIDQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Journals/Queries/GetJournalEntryByID/GetJournalEntryByIDResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/PaperPlane/Commands/CreatePaperPlane/CreatePaperPlaneCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/PaperPlane/Commands/CreatePaperPlane/CreatePaperPlaneCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/PaperPlane/Commands/CreatePaperPlane/CreatePaperPlaneCommandRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/PaperPlane/Commands/CreatePaperPlane/CreatePaperPlaneCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/HandlerTests/Journal/CreateEntryTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/HandlerTests/Journal/DeleteEntryTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/HandlerTests/Journal/GetJournalEntryByIDTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/HandlerTests/Journal/GetJournalsByMonthTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/HandlerTests/Journal/UpdateEntryTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/HandlerTests/Meditation/CreateMeditationTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/HandlerTests/Meditation/DeleteMeditationTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/HandlerTests/Meditation/GetMeditationTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/HandlerTests/Meditation/UpdateMeditationTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/HandlerTests/User/ChangePasswordCommandHandlerTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/HandlerTests/User/GetUserByIdHandlerTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/HandlerTests/User/LoginUserCommandHandlerTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/HandlerTests/User/RegisterUserCommandHandlerTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Entities/PaperPlane/PaperPlaneEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Exceptions/PaperPlane/HasSentOneRecentlyException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Repositories/IPaperPlaneRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/PaperPlaneRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Services/DapperDbQueryExecutor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QuietQuillAPI/MiddleWare/WebSocketMiddleware.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources/de2a5ec3-b2ad-4ae2-b021-fa56b9e25abc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/dataSources/de2a5ec3-b2ad-4ae2-b021-fa56b9e25abc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/AssemblyReference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/AssemblyReference.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Journals/Commands/CreateEntry/CreateEntryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Journals/Commands/CreateEntry/CreateEntryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Journals/Commands/DeleteEntry/DeleteEntryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Journals/Commands/DeleteEntry/DeleteEntryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Journals/Commands/UpdateEntry/UpdateEntryCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Journals/Commands/UpdateEntry/UpdateEntryCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Journals/DTOs/JournalDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Journals/DTOs/JournalDTO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Journals/Queries/GetJournalsByMonth/GetJournalsByMonthHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Journals/Queries/GetJournalsByMonth/GetJournalsByMonthHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Journals/Queries/GetJournalsByMonth/GetJournalsByMonthQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Journals/Queries/GetJournalsByMonth/GetJournalsByMonthQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Meditation/Queries/GetMeditation/GetMeditationHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Meditation/Queries/GetMeditation/GetMeditationHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Users/Queries/GetUserById/GetUserByIdHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Users/Queries/GetUserById/GetUserByIdHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArchitectureTests/ArchitectureTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ArchitectureTests/ArchitectureTests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Self-monitoring journal/JournalEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Self-monitoring journal/JournalEntry.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DependencyInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/ApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/Endpoints/JournalController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/Endpoints/JournalController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/Endpoints/Meditation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/Endpoints/Meditation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuietQuillAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QuietQuillAPI/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-    </list>
+    <list default="true" id="34c601c2-b0c6-433f-91ec-4e3fd6b709d0" name="Changes" comment="Added a lot more Unit tests. Started work on the airplane WS" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -318,7 +268,7 @@
       <workItem from="1718376580443" duration="4209000" />
       <workItem from="1718475449619" duration="978000" />
       <workItem from="1718587120746" duration="1482000" />
-      <workItem from="1718597662192" duration="21389000" />
+      <workItem from="1718597662192" duration="23341000" />
     </task>
     <task id="LOCAL-00001" summary="jwt with firebase initiated.&#10;Created base classes and some logic to them.">
       <option name="closed" value="true" />
@@ -416,7 +366,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716453011459</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added a lot more Unit tests. Started work on the airplane WS">
+      <option name="closed" value="true" />
+      <created>1718742803644</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1718742803644</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +407,8 @@
     <MESSAGE value="Meditation is now accessible, need to create controller" />
     <MESSAGE value="Removed the unused usings that were causing Tests to fail" />
     <MESSAGE value="Meditation Controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Meditation Controller" />
+    <MESSAGE value="Added a lot more Unit tests. Started work on the airplane WS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a lot more Unit tests. Started work on the airplane WS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
