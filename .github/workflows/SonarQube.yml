@@ -43,7 +43,7 @@ jobs:
       - name: Run tests with coverage
         run: |
           export PATH="$PATH:$HOME/.dotnet/tools"
-          dotnet test --no-build --configuration Release QuietQuillBE/QuietQuillBE.sln /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./TestResults/ /p:CoverletOutput=./TestResults/ --logger "trx;LogFileName=./TestResults/TestResults.trx"
+          dotnet test --no-build --configuration Release QuietQuillBE/QuietQuillBE.sln /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./TestResults/coverage.opencover.xml --logger "trx;LogFileName=./TestResults/TestResults.trx"
           echo "Listing contents of TestResults directory:"
           ls -la ./TestResults/
           if [ -f "./TestResults/coverage.opencover.xml" ]; then
