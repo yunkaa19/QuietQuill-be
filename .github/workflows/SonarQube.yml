@@ -45,7 +45,12 @@ jobs:
           dotnet test --no-build --configuration Release QuietQuillBE/QuietQuillBE.sln /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./TestResults/ --logger "trx;LogFileName=TestResults.trx"
           echo "Listing contents of TestResults directory:"
           ls -la ./TestResults/
-          cat ./TestResults/coverage.opencover.xml
+          if [ -f "./TestResults/coverage.opencover.xml" ]; then
+            echo "Coverage file exists"
+            cat ./TestResults/coverage.opencover.xml
+          else
+            echo "Coverage file does not exist"
+          fi
 
       - name: Prepare SonarQube Scanner
         run: |
