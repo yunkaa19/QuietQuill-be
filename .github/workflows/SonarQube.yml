@@ -43,6 +43,7 @@ jobs:
       - name: Run tests with coverage
         run: |
           export PATH="$PATH:$HOME/.dotnet/tools"
+          echo "Running tests with coverage..."
           dotnet test --no-build --configuration Release QuietQuillBE/QuietQuillBE.sln /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./TestResults/coverage.opencover.xml --logger "trx;LogFileName=./TestResults/TestResults.trx"
           echo "Listing contents of TestResults directory:"
           ls -la ./TestResults/
@@ -51,6 +52,7 @@ jobs:
             cat ./TestResults/coverage.opencover.xml
           else
             echo "Coverage file does not exist"
+            exit 1
           fi
 
       - name: Prepare SonarQube Scanner
