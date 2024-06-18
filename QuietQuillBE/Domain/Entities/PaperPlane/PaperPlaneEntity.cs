@@ -21,7 +21,7 @@ public class PaperPlaneEntity
         this.content = content;
         this.date =  DateTime.Now;
         this.userId = userId;
-    }    
+    }
     
     
     
