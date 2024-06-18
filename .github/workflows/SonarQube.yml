@@ -43,12 +43,11 @@ jobs:
       - name: Run tests with coverage
         run: |
           echo "Running tests with coverage..."
-          dotnet test --no-build --configuration Release QuietQuillBE/QuietQuillBE.sln /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./TestResults/coverage.opencover.xml --logger "trx;LogFileName=./TestResults/TestResults.trx" --verbosity detailed
+          dotnet test --no-build --configuration Release QuietQuillBE/QuietQuillBE.sln /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=$(pwd)/TestResults/coverage.opencover.xml --logger "trx;LogFileName=$(pwd)/TestResults/TestResults.trx" --verbosity detailed
           echo "Listing contents of TestResults directory:"
-          ls -la ./TestResults/
+          ls -R ./TestResults/
           echo "Checking for coverage file..."
-          find ./TestResults -type f -name 'coverage.opencover.xml'
-          if [ -f "./TestResults/coverage.opencover.xml" ]; then
+          if [ -f "$(pwd)/TestResults/coverage.opencover.xml" ]; then
             echo "Coverage file exists"
           else
             echo "Coverage file does not exist"
@@ -64,6 +63,6 @@ jobs:
       - name: Run SonarQube Scan
         run: |
           export PATH="$PATH:$HOME/.dotnet/tools"
-          dotnet sonarscanner begin /k:"QuietQuill-be" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN" /d:sonar.cs.opencover.reportsPaths="./TestResults/coverage.opencover.xml"
+          dotnet sonarscanner begin /k:"QuietQuill-be" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN" /d:sonar.cs.opencover.reportsPaths="$(pwd)/TestResults/coverage.opencover.xml"
           dotnet build QuietQuillBE/QuietQuillBE.sln
           dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
