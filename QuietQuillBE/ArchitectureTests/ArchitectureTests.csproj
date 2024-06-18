@@ -31,7 +31,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Mocks\" />
+      <Folder Include="HandlerTests\PaperPlane\" />
     </ItemGroup>
 
 </Project>

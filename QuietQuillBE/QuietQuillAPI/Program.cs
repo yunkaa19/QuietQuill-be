@@ -1,12 +1,14 @@
 using Application;
-using Application.Abstractions.Links;
 using Infrastructure;
 using Presentation;
 using QuietQuillBE.Extensions;
 using QuietQuillBE.MiddleWare;
 using Microsoft.OpenApi.Models;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Net.WebSockets;
+using Microsoft.AspNetCore.WebSockets;
+using QuietQuillBE.Endpoints;
+using MediatR;
+using WebSocketMiddleware = QuietQuillBE.MiddleWare.WebSocketMiddleware;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
@@ -57,6 +59,15 @@ builder.Services.AddCors(options =>
         });
 });
 
+
+
+//WS support
+builder.Services.AddWebSockets(options =>
+{
+options.KeepAliveInterval = TimeSpan.FromSeconds(120);
+});
+
+
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddPresentation();
 builder.Services.AddApplication();
@@ -74,13 +85,21 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseMiddleware<ValidationExceptionHandlerMiddleware>();
+
 app.UseHttpsRedirection();
 
 app.UseCors("NgOrigin");
+
+app.UseWebSockets();
 
 app.MapControllers();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseMiddleware<WebSocketMiddleware>();
+
+
+
 
 app.Run();

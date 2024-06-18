@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using Application.Abstraction.Authentication;
+using Application.Abstraction.Data;
 using Domain.Abstraction;
 using Domain.Repositories;
 using FirebaseAdmin;
@@ -7,6 +8,7 @@ using Google.Apis.Auth.OAuth2;
 using Infrastructure.Authentication;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.Repos;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -61,7 +63,12 @@ public static class DependencyInjection
         services.AddScoped<IReminderRepository, ReminderRepository>();
         services.AddScoped<IUserMeditationRecordRepository, UserMeditationRecordRepository>();
         services.AddScoped<IUserQuizRecordRepository, UserQuizRecordRepository>();
-
+        services.AddScoped<IPaperPlaneRepository, PaperPlaneRepository>();
+        
+        //Dapper query executor
+        services.AddScoped<IDbQueryExecutor, DapperDbQueryExecutor>();
+        
+        
         // Firebase Setup
         if (FirebaseApp.DefaultInstance == null)
         {

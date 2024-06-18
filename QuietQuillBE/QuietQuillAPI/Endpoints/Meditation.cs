@@ -26,7 +26,7 @@ namespace QuietQuillBE.Endpoints
             return Ok(token);
         }
         
-        [HttpPost("Delete"), Authorize]
+        [HttpDelete("Delete"), Authorize]
         public async Task<IActionResult> DeleteEntry([FromBody] DeleteMeditationCommand command)
         {
             var token = await _mediator.Send(command);

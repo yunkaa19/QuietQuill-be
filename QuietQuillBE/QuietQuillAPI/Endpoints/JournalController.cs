@@ -1,6 +1,7 @@
 using Application.Journals.Commands.CreateEntry;
 using Application.Journals.Commands.DeleteEntry;
 using Application.Journals.Commands.UpdateEntry;
+using Application.Journals.Queries.GetJournalEntryByID;
 using Application.Journals.Queries.GetJournalsByMonth;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -30,7 +31,7 @@ namespace QuietQuillBE.Endpoints
         }
         
         
-        [HttpPost("Delete"), Authorize]
+        [HttpDelete("Delete"), Authorize]
         public async Task<IActionResult> DeleteEntry([FromBody] DeleteEntryCommand command)
         {
             var token = await _mediator.Send(command);
@@ -44,13 +45,19 @@ namespace QuietQuillBE.Endpoints
             return Ok(token);
         }
         
-        [HttpGet("GetMonth"), Authorize]
+        [HttpPost("GetMonth"), Authorize]
         public async Task<IActionResult> GetEntries([FromBody] GetJournalsByMonthQuery query)
         {
             var token = await _mediator.Send(query);
             return Ok(token);
         }
         
+        [HttpPost("GetEntry"), Authorize]
+        public async Task<IActionResult> GetEntry([FromBody] GetJournalEntryByIDQuery query)
+        {
+            var token = await _mediator.Send(query);
+            return Ok(token);
+        }
         
     }
 }

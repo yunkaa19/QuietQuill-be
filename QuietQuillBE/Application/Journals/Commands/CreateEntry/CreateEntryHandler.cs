@@ -29,7 +29,7 @@ public class CreateEntryHandler : IRequestHandler<CreateEntryCommand,JournalDTO>
         {
             throw new ValidationException(validationResult.Errors);
         }
-        Guid userId = Guid.Parse(request.Entry.UserId);
+        Guid userId = request.Entry.UserId;
         string date = request.Entry.Day + "/" + request.Entry.Month + "/" + request.Entry.Year;
         DateOnly entryDate = DateOnly.Parse(date);
         var entry = new JournalEntry(userId, request.Entry.Content, entryDate, request.Entry.Mood, request.Entry.Tags);
@@ -42,7 +42,8 @@ public class CreateEntryHandler : IRequestHandler<CreateEntryCommand,JournalDTO>
         await _unitOfWork.SaveChangesAsync(cancellationToken);
         return new JournalDTO
         {
-            UserId = entry.UserId.ToString(),
+            UserId = entry.UserId,
+            Id = entry.Id,
             Content = entry.Content,
             Day = entry.EntryDate.Day.ToString(),
             Month = entry.EntryDate.Month.ToString(),

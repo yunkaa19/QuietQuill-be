@@ -1,27 +1,35 @@
-﻿using System.Data;
+﻿using System.Runtime.CompilerServices;
+using Application.Abstraction.Data;
 using Application.Abstractions.Messaging;
 using Dapper;
 using Domain.Exceptions.Meditation;
 
-namespace Application.Meditation.Queries.GetMeditation;
-
-internal sealed class GetMeditationHandler : IQueryHandler<GetMeditationQuery, GetMeditationResponse>
+[assembly: InternalsVisibleTo("ArchitectureTests")]
+namespace Application.Meditation.Queries.GetMeditation
 {
-    
-    private readonly IDbConnection _dbConnection;
-    
-    public GetMeditationHandler(IDbConnection dbConnection) => _dbConnection = dbConnection;
-    
-    public Task<GetMeditationResponse> Handle(GetMeditationQuery request, CancellationToken cancellationToken)
+    internal sealed class GetMeditationHandler : IQueryHandler<GetMeditationQuery, GetMeditationResponse>
     {
-        const string sql = @"SELECT * FROM ""Meditations"" WHERE ""Id"" = @MeditationId";
-        var meditation =  _dbConnection.QueryFirstOrDefaultAsync<GetMeditationResponse>(
-            sql,
-            new { request.Id });
-        if (meditation is null)
+        private readonly IDbQueryExecutor _dbQueryExecutor;
+
+        public GetMeditationHandler(IDbQueryExecutor dbQueryExecutor)
         {
-            throw new MeditationNotFoundException(request.Id);
+            _dbQueryExecutor = dbQueryExecutor;
         }
-        return meditation;
+
+        public async Task<GetMeditationResponse> Handle(GetMeditationQuery request, CancellationToken cancellationToken)
+        {
+            const string sql = @"SELECT * FROM ""Meditations"" WHERE ""Id"" = @MeditationId";
+            
+            var meditation = await _dbQueryExecutor.QueryFirstOrDefaultAsync<GetMeditationResponse>(
+                sql,
+                new { MeditationId = request.Id });
+
+            if (meditation is null)
+            {
+                throw new MeditationNotFoundException(request.Id);
+            }
+
+            return meditation;
+        }
     }
 }

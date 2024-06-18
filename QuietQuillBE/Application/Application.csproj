@@ -25,11 +25,10 @@
       <Folder Include="Journals\Interfaces\" />
       <Folder Include="Meditation\Events\" />
       <Folder Include="Meditation\Interfaces\" />
-      <Folder Include="Reminders\Commands\" />
-      <Folder Include="Reminders\DTOs\" />
-      <Folder Include="Reminders\Events\" />
-      <Folder Include="Reminders\Interfaces\" />
-      <Folder Include="Reminders\Queries\" />
+      <Folder Include="PaperPlane\DTOs\" />
+      <Folder Include="PaperPlane\Events\" />
+      <Folder Include="PaperPlane\Interfaces\" />
+      <Folder Include="PaperPlane\Queries\" />
       <Folder Include="Users\Events\" />
       <Folder Include="Users\Interfaces\" />
       <Folder Include="_Example\DTOs\" />

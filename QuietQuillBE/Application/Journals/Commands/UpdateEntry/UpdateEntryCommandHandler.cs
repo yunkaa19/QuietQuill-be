@@ -36,14 +36,26 @@ public class UpdateEntryCommandHandler : IRequestHandler<UpdateEntryCommand, Jou
             throw new Exception("Journal Entry not found.");
         }
 
+        // Update the properties of the journalEntry object with the new values from the request.Entry object
+        journalEntry.Content = request.Entry.Content;
+        journalEntry.EntryDate = DateOnly.Parse(request.Entry.Day + "/" + request.Entry.Month + "/" + request.Entry.Year);
+        journalEntry.Mood = request.Entry.Mood;
+        journalEntry.Tags = request.Entry.Tags;
+
         _journalEntryRepository.UpdateJournalEntry(journalEntry);
-        
-        
+
         await _unitOfWork.SaveChangesAsync(cancellationToken);
-        
+
         return new JournalDTO
         {
-            
+            UserId = request.Entry.UserId,
+            Id = request.Entry.Id,
+            Content = request.Entry.Content,
+            Day = request.Entry.Day,
+            Month = request.Entry.Month,
+            Year = request.Entry.Year,
+            Mood = request.Entry.Mood,
+            Tags = request.Entry.Tags
         };
     }
 }

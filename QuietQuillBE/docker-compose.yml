@@ -37,7 +37,7 @@ services:
   fe:
     image: yunka19/quietquill-fe:latest
     ports:
-      - "5000:5000"
+      - "3000:3000"
     restart: always
     depends_on:
       - quietquillapi

@@ -1157,7 +1157,7 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <CollationName>utf8_bin</CollationName>
     </schema>
     <schema id="328" parent="1" name="quietquillddb">
-      <LastIntrospectionLocalTimestamp>2024-05-10.18:21:40</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-06-17.05:34:15</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
     <schema id="329" parent="1" name="test">
@@ -1192,196 +1192,192 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="338" parent="328" name="reminders">
+    <table id="338" parent="328" name="paperplanes">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="339" parent="328" name="userquizrecords">
+    <table id="339" parent="328" name="reminders">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <table id="340" parent="328" name="users">
+    <table id="340" parent="328" name="userquizrecords">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <column id="341" parent="334" name="MigrationId">
+    <table id="341" parent="328" name="users">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <column id="342" parent="334" name="MigrationId">
       <DasType>varchar(150)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="342" parent="334" name="ProductVersion">
+    <column id="343" parent="334" name="ProductVersion">
       <DasType>varchar(32)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <index id="343" parent="334" name="PRIMARY">
+    <index id="344" parent="334" name="PRIMARY">
       <ColNames>MigrationId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="344" parent="334" name="PRIMARY">
+    <key id="345" parent="334" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="345" parent="335" name="Id">
+    <column id="346" parent="335" name="Id">
       <DasType>char(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <CollationName>ascii_general_ci</CollationName>
     </column>
-    <column id="346" parent="335" name="UserId">
+    <column id="347" parent="335" name="UserId">
       <DasType>char(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <CollationName>ascii_general_ci</CollationName>
     </column>
-    <column id="347" parent="335" name="Name">
+    <column id="348" parent="335" name="Name">
       <DasType>longtext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="348" parent="335" name="Description">
+    <column id="349" parent="335" name="Description">
       <DasType>longtext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="349" parent="335" name="StartDate">
+    <column id="350" parent="335" name="StartDate">
       <DasType>datetime(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="350" parent="335" name="TargetFrequency">
+    <column id="351" parent="335" name="TargetFrequency">
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="351" parent="335" name="CurrentStreak">
+    <column id="352" parent="335" name="CurrentStreak">
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="352" parent="335" name="LongestStreak">
+    <column id="353" parent="335" name="LongestStreak">
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <column id="353" parent="335" name="isActive">
+    <column id="354" parent="335" name="isActive">
       <DasType>tinyint(1)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
-    <foreign-key id="354" parent="335" name="FK_Habits_Users_UserId">
+    <foreign-key id="355" parent="335" name="FK_Habits_Users_UserId">
       <ColNames>UserId</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>UserId</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="355" parent="335" name="PRIMARY">
+    <index id="356" parent="335" name="PRIMARY">
       <ColNames>Id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="356" parent="335" name="IX_Habits_UserId">
+    <index id="357" parent="335" name="IX_Habits_UserId">
       <ColNames>UserId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="357" parent="335" name="PRIMARY">
+    <key id="358" parent="335" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="358" parent="336" name="Id">
+    <column id="359" parent="336" name="Id">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="359" parent="336" name="UserId">
+    <column id="360" parent="336" name="UserId">
       <DasType>char(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <CollationName>ascii_general_ci</CollationName>
     </column>
-    <column id="360" parent="336" name="Content">
+    <column id="361" parent="336" name="Content">
       <DasType>longtext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="361" parent="336" name="EntryDate">
+    <column id="362" parent="336" name="EntryDate">
       <DasType>date|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="362" parent="336" name="Mood">
+    <column id="363" parent="336" name="Mood">
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="363" parent="336" name="Tags">
+    <column id="364" parent="336" name="Tags">
       <DasType>longtext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <foreign-key id="364" parent="336" name="FK_JournalEntries_Users_UserId">
+    <foreign-key id="365" parent="336" name="FK_JournalEntries_Users_UserId">
       <ColNames>UserId</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>UserId</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="365" parent="336" name="PRIMARY">
+    <index id="366" parent="336" name="PRIMARY">
       <ColNames>Id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="366" parent="336" name="IX_JournalEntries_UserId">
+    <index id="367" parent="336" name="IX_JournalEntries_UserId">
       <ColNames>UserId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="367" parent="336" name="PRIMARY">
+    <key id="368" parent="336" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="368" parent="337" name="Id">
-      <DasType>char(36)|0s</DasType>
+    <column id="369" parent="337" name="Id">
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <CollationName>ascii_general_ci</CollationName>
     </column>
-    <column id="369" parent="337" name="UserId">
+    <column id="370" parent="337" name="UserId">
       <DasType>char(36)|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>2</Position>
       <CollationName>ascii_general_ci</CollationName>
     </column>
-    <column id="370" parent="337" name="Title">
+    <column id="371" parent="337" name="Title">
       <DasType>longtext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="371" parent="337" name="Duration">
+    <column id="372" parent="337" name="Duration">
       <DasType>time(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="372" parent="337" name="Description">
+    <column id="373" parent="337" name="Description">
       <DasType>longtext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="373" parent="337" name="Type">
+    <column id="374" parent="337" name="Type">
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="374" parent="337" name="SessionDate">
-      <DasType>datetime(6)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>7</Position>
-    </column>
     <foreign-key id="375" parent="337" name="FK_MeditationSessions_Users_UserId">
       <ColNames>UserId</ColNames>
-      <OnDelete>cascade</OnDelete>
       <RefColNames>UserId</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
@@ -1399,148 +1395,181 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="379" parent="338" name="Id">
+    <column id="379" parent="338" name="id">
+      <AutoIncrement>3</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="380" parent="338" name="content">
+      <DasType>longtext|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="381" parent="338" name="date">
+      <DasType>datetime(6)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="382" parent="338" name="userId">
+      <DasType>char(36)|0s</DasType>
+      <DefaultExpression>&apos;00000000-0000-0000-0000-000000000000&apos;</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <CollationName>ascii_general_ci</CollationName>
+    </column>
+    <index id="383" parent="338" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="384" parent="338" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="385" parent="339" name="Id">
       <DasType>char(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <CollationName>ascii_general_ci</CollationName>
     </column>
-    <column id="380" parent="338" name="UserId">
+    <column id="386" parent="339" name="UserId">
       <DasType>char(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <CollationName>ascii_general_ci</CollationName>
     </column>
-    <column id="381" parent="338" name="ReminderTime">
+    <column id="387" parent="339" name="ReminderTime">
       <DasType>datetime(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="382" parent="338" name="Message">
+    <column id="388" parent="339" name="Message">
       <DasType>longtext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="383" parent="338" name="IsRecurring">
+    <column id="389" parent="339" name="IsRecurring">
       <DasType>tinyint(1)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <foreign-key id="384" parent="338" name="FK_Reminders_Users_UserId">
+    <foreign-key id="390" parent="339" name="FK_Reminders_Users_UserId">
       <ColNames>UserId</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>UserId</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="385" parent="338" name="PRIMARY">
+    <index id="391" parent="339" name="PRIMARY">
       <ColNames>Id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="386" parent="338" name="IX_Reminders_UserId">
+    <index id="392" parent="339" name="IX_Reminders_UserId">
       <ColNames>UserId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="387" parent="338" name="PRIMARY">
+    <key id="393" parent="339" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="388" parent="339" name="Id">
+    <column id="394" parent="340" name="Id">
       <DasType>char(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <CollationName>ascii_general_ci</CollationName>
     </column>
-    <column id="389" parent="339" name="UserId">
+    <column id="395" parent="340" name="UserId">
       <DasType>char(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <CollationName>ascii_general_ci</CollationName>
     </column>
-    <column id="390" parent="339" name="QuizId">
+    <column id="396" parent="340" name="QuizId">
       <DasType>char(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <CollationName>ascii_general_ci</CollationName>
     </column>
-    <column id="391" parent="339" name="CompletedOn">
+    <column id="397" parent="340" name="CompletedOn">
       <DasType>datetime(6)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="392" parent="339" name="Score">
+    <column id="398" parent="340" name="Score">
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <foreign-key id="393" parent="339" name="FK_UserQuizRecords_Users_UserId">
+    <foreign-key id="399" parent="340" name="FK_UserQuizRecords_Users_UserId">
       <ColNames>UserId</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>UserId</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="394" parent="339" name="PRIMARY">
+    <index id="400" parent="340" name="PRIMARY">
       <ColNames>Id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="395" parent="339" name="IX_UserQuizRecords_UserId">
+    <index id="401" parent="340" name="IX_UserQuizRecords_UserId">
       <ColNames>UserId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="396" parent="339" name="PRIMARY">
+    <key id="402" parent="340" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="397" parent="340" name="UserId">
+    <column id="403" parent="341" name="UserId">
       <DasType>char(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <CollationName>ascii_general_ci</CollationName>
     </column>
-    <column id="398" parent="340" name="Username">
+    <column id="404" parent="341" name="Username">
       <DasType>longtext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="399" parent="340" name="PasswordHash">
+    <column id="405" parent="341" name="PasswordHash">
       <DasType>longtext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="400" parent="340" name="Email">
+    <column id="406" parent="341" name="Email">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="401" parent="340" name="Role">
+    <column id="407" parent="341" name="Role">
       <DasType>longtext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="402" parent="340" name="IdentityID">
+    <column id="408" parent="341" name="IdentityID">
       <DasType>longtext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <index id="403" parent="340" name="PRIMARY">
+    <index id="409" parent="341" name="PRIMARY">
       <ColNames>UserId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="404" parent="340" name="IX_Users_Email">
+    <index id="410" parent="341" name="IX_Users_Email">
       <ColNames>Email</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="405" parent="340" name="PRIMARY">
+    <key id="411" parent="341" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="406" parent="340" name="IX_Users_Email">
+    <key id="412" parent="341" name="IX_Users_Email">
       <UnderlyingIndexName>IX_Users_Email</UnderlyingIndexName>
     </key>
   </database-model>

@@ -56,8 +56,11 @@ public class User
     
     public void UpdateIdentityId(string identityId)
     {
-        if(identityId == null)
+        if (identityId == null)
+        {
+            
             throw new ArgumentNullException(nameof(identityId));
+        }
         
         IdentityID = identityId;
     }

@@ -1,31 +1,35 @@
-﻿using System.Data;
+﻿using Application.Abstraction.Data;
 using Application.Abstractions.Messaging;
 using Domain.Exceptions.Users;
-using Dapper;
+using System.Runtime.CompilerServices;
 
-namespace Application.Users.Queries.GetUserById;
+[assembly: InternalsVisibleTo("ArchitectureTests")]
 
-internal sealed class GetUserByIdHandler : IQueryHandler<GetUserByIdQuery, UserResponse>
+namespace Application.Users.Queries.GetUserById
 {
-    private readonly IDbConnection _dbConnection;
-    
-    public GetUserByIdHandler(IDbConnection dbConnection) => _dbConnection = dbConnection;
-    
-    public async Task<UserResponse> Handle(
-        GetUserByIdQuery request,
-        CancellationToken cancellationToken)
+    internal sealed class GetUserByIdHandler : IQueryHandler<GetUserByIdQuery, UserResponse>
     {
-        const string sql = @"SELECT * FROM ""Users"" WHERE ""Id"" = @UserId";
-        
-        var user = await _dbConnection.QueryFirstOrDefaultAsync<UserResponse>(
-            sql,
-            new { request.UserId });
-        
-        if (user is null)
+        private readonly IDbQueryExecutor _dbQueryExecutor;
+
+        public GetUserByIdHandler(IDbQueryExecutor dbQueryExecutor)
         {
-            throw new UserNotFoundException(request.UserId);
+            _dbQueryExecutor = dbQueryExecutor;
         }
-        
-        return user;
+
+        public async Task<UserResponse> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
+        {
+            const string sql = @"SELECT * FROM ""Users"" WHERE ""Id"" = @UserId";
+
+            var user = await _dbQueryExecutor.QueryFirstOrDefaultAsync<UserResponse>(
+                sql,
+                new { UserId = request.UserId });
+
+            if (user is null)
+            {
+                throw new UserNotFoundException(request.UserId);
+            }
+
+            return user;
+        }
     }
 }

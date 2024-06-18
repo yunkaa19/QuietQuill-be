@@ -4,6 +4,7 @@ using Domain.Entities;
 using Domain.Entities.HabbitTracker;
 using Domain.Entities.Meditation;
 using Domain.Entities.MentalHealthSupport;
+using Domain.Entities.PaperPlane;
 using Domain.Primitives;
 using MediatR;
 
@@ -30,6 +31,7 @@ namespace Infrastructure.Persistence;
         public DbSet<Habit> Habits { get; set; }
         public DbSet<MeditationSession> MeditationSessions { get; set; }
         public DbSet<UserQuizRecord> UserQuizRecords { get; set; }
+        public DbSet<PaperPlaneEntity> PaperPlanes { get; set; }
         
         
         

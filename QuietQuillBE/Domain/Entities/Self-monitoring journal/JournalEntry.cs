@@ -7,7 +7,7 @@ public class JournalEntry
     public string Id { get; private set; }
     public Guid UserId { get; private set; }
     public string Content { get;  set; }
-    public DateOnly EntryDate { get; private set; }
+    public DateOnly EntryDate { get; set; }
     public Mood Mood { get;  set; }
     public string Tags { get;  set; }
 
