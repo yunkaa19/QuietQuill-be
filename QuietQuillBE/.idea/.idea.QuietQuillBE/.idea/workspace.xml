@@ -9,28 +9,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34c601c2-b0c6-433f-91ec-4e3fd6b709d0" name="Changes" comment="Added coverlet.msbuild To try fix the coverage issue in sonarqube">
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/EntitiesUnitTests/HabitLogTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/EntitiesUnitTests/HabitTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/EntitiesUnitTests/JournalEntryTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/EntitiesUnitTests/MeditationSessionTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/EntitiesUnitTests/PaperPlaneTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/EntitiesUnitTests/QuizQuestionsTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/EntitiesUnitTests/QuizTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/EntitiesUnitTests/ReminderTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/EntitiesUnitTests/ResourceTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/EntitiesUnitTests/UserMeditationRecordTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/EntitiesUnitTests/UserQuizRecordTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/EntitiesUnitTests/UserTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/ExceptionUnitTests/BadRequestExceptionTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/ExceptionUnitTests/HasSentOneRecentlyExceptionTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/ExceptionUnitTests/MeditationNotFoundExceptionTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/ExceptionUnitTests/NotFoundExceptionTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/ExceptionUnitTests/UserNotFoundExceptionTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArchitectureTests/PrimitivesUnitTests/EntityTests.cs" afterDir="false" />
+    <list default="true" id="34c601c2-b0c6-433f-91ec-4e3fd6b709d0" name="Changes" comment="Merge of Dev">
+      <change afterPath="$PROJECT_DIR$/ArchitectureTests/InfrastructureTests/RepositoryTests/AdminRepositoryTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArchitectureTests/InfrastructureTests/RepositoryTests/HabitLogRepositoryTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArchitectureTests/InfrastructureTests/RepositoryTests/HabitRepositoryTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArchitectureTests/InfrastructureTests/RepositoryTests/JournalEntryRepositoryTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArchitectureTests/InfrastructureTests/RepositoryTests/MeditationSessionRepositoryTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArchitectureTests/InfrastructureTests/RepositoryTests/MoodRepositoryTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArchitectureTests/InfrastructureTests/RepositoryTests/PaperPlaneRepositoryTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArchitectureTests/InfrastructureTests/RepositoryTests/QuizQuestionRepositoryTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArchitectureTests/InfrastructureTests/RepositoryTests/QuizRepositoryTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArchitectureTests/InfrastructureTests/RepositoryTests/ReminderRepositoryTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArchitectureTests/InfrastructureTests/RepositoryTests/ResourceRepositoryTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArchitectureTests/InfrastructureTests/RepositoryTests/UserMeditationRecordRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArchitectureTests/InfrastructureTests/RepositoryTests/UserQuizRepositoryTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArchitectureTests/InfrastructureTests/RepositoryTests/UserRepositoryTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Exceptions/Journal/JournalNotFoundException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Exceptions/PaperPlane/PaperPlaneNotFoundException.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QuietQuillBE/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/MentalHealthSupport/QuizQuestion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/MentalHealthSupport/QuizQuestion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/PaperPlane/PaperPlaneEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/PaperPlane/PaperPlaneEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArchitectureTests/ArchitectureTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ArchitectureTests/ArchitectureTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Exceptions/Users/UserNotFoundException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Exceptions/Users/UserNotFoundException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/JournalEntryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/JournalEntryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/PaperPlaneRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/PaperPlaneRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repos/UserRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +68,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/649f9a5315084d038b64e29ea11b1fb5b910/46/aeb247cf/IConfiguration.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d06c1e5bad3c480b9c3eee62e2143d7848000/30/33890b91/AbstractFirebaseAuth.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e4918c8ac7be482996b82eec990f156d11200/c8/bfcd38c5/ISender.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fba9afd29efa49229d2dd911da0bdfedc8e910/4e/b07c6433/NotImplementedException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fba9afd29efa49229d2dd911da0bdfedc8e910/b0/d8437324/NotSupportedException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9161da3da671f777cc3652d39696c23db97793e37cb97fcb4e1e87234e56322/ValidationException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/_Example/Queries/ExampleQuery/ExampleResponse.cs" root0="FORCE_HIGHLIGHTING" />
@@ -86,40 +89,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.QuietQuillBE: IIS Express.executor": "Run",
-    ".NET Launch Settings Profile.QuietQuillBE: http.executor": "Run",
-    "Docker.QuietQuillAPI/Dockerfile.executor": "Run",
-    "Docker.docker-compose.yml.bedb: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.fe: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.quietquillapi: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment (1).executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Dev",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.QuietQuillBE: IIS Express.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.QuietQuillBE: http.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.QuietQuillAPI/Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.bedb: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.fe: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.quietquillapi: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment (1).executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb",
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;,
+      &quot;mysql&quot;
     ],
-    "rider.external.source.directories": [
-      "C:\\Users\\Yunuz\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Yunuz\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Yunuz\\AppData\\Local\\Symbols\\src"
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Yunuz\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Yunuz\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Yunuz\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.QuietQuillBE: http">
     <configuration name="QuietQuillBE: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/QuietQuillAPI/QuietQuillAPI.csproj" />
@@ -296,6 +299,7 @@
       <workItem from="1718475449619" duration="978000" />
       <workItem from="1718587120746" duration="1482000" />
       <workItem from="1718597662192" duration="27781000" />
+      <workItem from="1718757300838" duration="4115000" />
     </task>
     <task id="LOCAL-00001" summary="jwt with firebase initiated.&#10;Created base classes and some logic to them.">
       <option name="closed" value="true" />

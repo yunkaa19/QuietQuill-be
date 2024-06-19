@@ -54,8 +54,8 @@ public  class UserRepository : IUserRepository
         var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
         if (user == null)
         {
-            throw new UserNotFoundException(new Guid());
+            throw new UserNotFoundException(email);
         }
-        return await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
+        return user;
     }
 }

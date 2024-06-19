@@ -1,4 +1,5 @@
 ﻿using Domain.Entities.PaperPlane;
+using Domain.Exceptions.PaperPlane;
 using Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,7 +26,7 @@ public class PaperPlaneRepository : IPaperPlaneRepository
         var paperPlane = await _dbContext.PaperPlanes.FirstOrDefaultAsync(p => p.id == id);
         if (paperPlane  == null)
         {
-            throw new NotImplementedException();       
+            throw new PaperPlaneNotFoundException(id);
         }
         return paperPlane;
     }
@@ -47,7 +48,7 @@ public class PaperPlaneRepository : IPaperPlaneRepository
         var paperPlane = await _dbContext.PaperPlanes.OrderByDescending(p => p.date).FirstOrDefaultAsync();
         if (paperPlane == null)
         {
-            throw new NotImplementedException();
+            throw new PaperPlaneNotFoundException();
         }
         return paperPlane;
         

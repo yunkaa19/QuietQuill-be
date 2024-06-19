@@ -8,4 +8,8 @@ public sealed class UserNotFoundException : NotFoundException
         : base($"The user with the identifier {userId} was not found.")
     {
     }
+
+    public UserNotFoundException(string Email) : base($"User with email {Email} was not found.")
+    {
+    }
 }

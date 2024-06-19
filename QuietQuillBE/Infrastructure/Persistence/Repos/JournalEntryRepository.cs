@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Domain.Exceptions.Journal;
 using Domain.Repositories;
 using Microsoft.IdentityModel.Tokens;
 
@@ -33,7 +34,7 @@ public class JournalEntryRepository : IJournalEntryRepository
         var journalEntry = _dbContext.JournalEntries.Find(journalEntryId);
         if (journalEntry == null)
         {
-            throw new Exception($"No journal entry found with ID {journalEntryId}");
+            throw new JournalNotFoundException(journalEntryId);
         }
         return journalEntry;
     }
