@@ -1,4 +1,5 @@
-﻿using Application.Abstraction.Authentication;
+﻿using System.Text.Json;
+using Application.Abstraction.Authentication;
 using Domain.Abstraction;
 using Domain.Entities;
 using Domain.Repositories;
@@ -54,7 +55,10 @@ public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, s
         // Commit the changes
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        return identityID;
+        return  JsonSerializer.Serialize(new
+        {
+            identityID
+        });
     }
 
 }

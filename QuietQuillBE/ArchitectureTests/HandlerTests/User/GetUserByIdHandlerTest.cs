@@ -2,6 +2,12 @@
 using Application.Abstraction.Data;
 using Domain.Exceptions.Users;
 using Moq;
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Xunit;
+using Application.Users.DTOs;
 
 namespace ArchitectureTests.HandlerTests.Users
 {
@@ -21,13 +27,19 @@ namespace ArchitectureTests.HandlerTests.Users
             return new GetUserByIdQuery(Guid.NewGuid());
         }
 
-        private UserResponse CreateValidUserResponse(Guid userId)
+        private FullUserDTO CreateValidFullUserDTO(Guid userId)
         {
-            return new UserResponse
-            (
-                userId,
-                "testuser@example.com"
-            );
+            return new FullUserDTO
+            {
+                UserId = userId,
+                Username = "testuser",
+                Email = "testuser@example.com",
+                JournalEntries = new List<JournalEntryDto>(),
+                Reminders = new List<ReminderDto>(),
+                Habits = new List<HabitDto>(),
+                MeditationSessions = new List<MeditationSessionDto>(),
+                UserQuizRecords = new List<UserQuizRecordDto>()
+            };
         }
 
         [Fact]
@@ -35,15 +47,55 @@ namespace ArchitectureTests.HandlerTests.Users
         {
             // Arrange
             var query = CreateValidQuery();
-            var expectedResponse = CreateValidUserResponse(query.UserId);
+            var expectedResponse = CreateValidFullUserDTO(query.UserId);
 
-            _dbQueryExecutorMock.Setup(db => db.QueryFirstOrDefaultAsync<UserResponse>(
+            _dbQueryExecutorMock.Setup(db => db.QueryFirstOrDefaultAsync<FullUserDTO>(
                 It.IsAny<string>(),
                 It.IsAny<object>(),
                 null,
                 null,
                 null))
                 .ReturnsAsync(expectedResponse);
+
+            _dbQueryExecutorMock.Setup(db => db.QueryAsync<JournalEntryDto>(
+                It.IsAny<string>(),
+                It.IsAny<object>(),
+                null,
+                null,
+                null))
+                .ReturnsAsync(new List<JournalEntryDto>());
+
+            _dbQueryExecutorMock.Setup(db => db.QueryAsync<ReminderDto>(
+                It.IsAny<string>(),
+                It.IsAny<object>(),
+                null,
+                null,
+                null))
+                .ReturnsAsync(new List<ReminderDto>());
+
+            _dbQueryExecutorMock.Setup(db => db.QueryAsync<HabitDto>(
+                It.IsAny<string>(),
+                It.IsAny<object>(),
+                null,
+                null,
+                null))
+                .ReturnsAsync(new List<HabitDto>());
+
+            _dbQueryExecutorMock.Setup(db => db.QueryAsync<MeditationSessionDto>(
+                It.IsAny<string>(),
+                It.IsAny<object>(),
+                null,
+                null,
+                null))
+                .ReturnsAsync(new List<MeditationSessionDto>());
+
+            _dbQueryExecutorMock.Setup(db => db.QueryAsync<UserQuizRecordDto>(
+                It.IsAny<string>(),
+                It.IsAny<object>(),
+                null,
+                null,
+                null))
+                .ReturnsAsync(new List<UserQuizRecordDto>());
 
             // Act
             var result = await _handler.Handle(query, CancellationToken.None);
@@ -52,8 +104,49 @@ namespace ArchitectureTests.HandlerTests.Users
             Assert.NotNull(result);
             Assert.Equal(expectedResponse.UserId, result.UserId);
             Assert.Equal(expectedResponse.Email, result.Email);
+            Assert.Equal(expectedResponse.Username, result.Username);
+            Assert.Empty(result.JournalEntries);
+            Assert.Empty(result.Reminders);
+            Assert.Empty(result.Habits);
+            Assert.Empty(result.MeditationSessions);
+            Assert.Empty(result.UserQuizRecords);
 
-            _dbQueryExecutorMock.Verify(db => db.QueryFirstOrDefaultAsync<UserResponse>(
+            _dbQueryExecutorMock.Verify(db => db.QueryFirstOrDefaultAsync<FullUserDTO>(
+                It.IsAny<string>(),
+                It.IsAny<object>(),
+                null,
+                null,
+                null), Times.Once);
+
+            _dbQueryExecutorMock.Verify(db => db.QueryAsync<JournalEntryDto>(
+                It.IsAny<string>(),
+                It.IsAny<object>(),
+                null,
+                null,
+                null), Times.Once);
+
+            _dbQueryExecutorMock.Verify(db => db.QueryAsync<ReminderDto>(
+                It.IsAny<string>(),
+                It.IsAny<object>(),
+                null,
+                null,
+                null), Times.Once);
+
+            _dbQueryExecutorMock.Verify(db => db.QueryAsync<HabitDto>(
+                It.IsAny<string>(),
+                It.IsAny<object>(),
+                null,
+                null,
+                null), Times.Once);
+
+            _dbQueryExecutorMock.Verify(db => db.QueryAsync<MeditationSessionDto>(
+                It.IsAny<string>(),
+                It.IsAny<object>(),
+                null,
+                null,
+                null), Times.Once);
+
+            _dbQueryExecutorMock.Verify(db => db.QueryAsync<UserQuizRecordDto>(
                 It.IsAny<string>(),
                 It.IsAny<object>(),
                 null,
@@ -67,18 +160,18 @@ namespace ArchitectureTests.HandlerTests.Users
             // Arrange
             var query = CreateValidQuery();
 
-            _dbQueryExecutorMock.Setup(db => db.QueryFirstOrDefaultAsync<UserResponse>(
+            _dbQueryExecutorMock.Setup(db => db.QueryFirstOrDefaultAsync<FullUserDTO>(
                 It.IsAny<string>(),
                 It.IsAny<object>(),
                 null,
                 null,
                 null))
-                .ReturnsAsync((UserResponse)null);
+                .ReturnsAsync((FullUserDTO)null);
 
             // Act & Assert
             await Assert.ThrowsAsync<UserNotFoundException>(() => _handler.Handle(query, CancellationToken.None));
 
-            _dbQueryExecutorMock.Verify(db => db.QueryFirstOrDefaultAsync<UserResponse>(
+            _dbQueryExecutorMock.Verify(db => db.QueryFirstOrDefaultAsync<FullUserDTO>(
                 It.IsAny<string>(),
                 It.IsAny<object>(),
                 null,

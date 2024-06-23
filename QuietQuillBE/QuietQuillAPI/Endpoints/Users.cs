@@ -1,7 +1,9 @@
 ﻿using Application.Users.Commands.ChangePassword;
 using Application.Users.Commands.LoginUser;
 using Application.Users.Commands.RegisterUser;
+using Application.Users.Queries.GetUserById;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace QuietQuillBE.Endpoints;
@@ -37,5 +39,17 @@ namespace QuietQuillBE.Endpoints;
             var token = await _mediator.Send(command);
             return Ok(token);
         }
-        
+        [HttpPost("GetUser")]
+        public async Task<IActionResult> GetUser([FromBody] GetUserByIdQuery query)
+        {
+            var token = await _mediator.Send(query);
+            return Ok(token);
+        }
+        [HttpPost("UpdatePassword")]
+        [Authorize]
+        public async Task<IActionResult> UpdatePassword([FromBody] ChangePasswordCommand command)
+        {
+            var token = await _mediator.Send(command);
+            return Ok(token);
+        }
     }

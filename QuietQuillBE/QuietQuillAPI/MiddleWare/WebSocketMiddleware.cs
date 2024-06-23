@@ -1,11 +1,14 @@
 ﻿using System.Net.WebSockets;
 using MediatR;
 using System.Collections.Concurrent;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using Application.PaperPlane.Commands.CreatePaperPlane;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Text.Json;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.WebUtilities;
 
 namespace QuietQuillBE.MiddleWare
 {
@@ -29,9 +32,10 @@ namespace QuietQuillBE.MiddleWare
             {
                 if (context.WebSockets.IsWebSocketRequest)
                 {
-                    // Authenticate the user
-                    var authResult = await context.AuthenticateAsync();
-                    if (!authResult.Succeeded || !context.User.Identity.IsAuthenticated)
+                    var token = context.Request.Query["token"].FirstOrDefault();
+
+                    // Validate the token
+                    if (string.IsNullOrEmpty(token) || !await ValidateTokenAsync(token, context))
                     {
                         context.Response.StatusCode = 401; // Unauthorized
                         await context.Response.WriteAsync("Unauthorized");
@@ -55,7 +59,10 @@ namespace QuietQuillBE.MiddleWare
                     {
                         _sockets.TryRemove(webSocket, out _);
                         socketFinishedTcs.TrySetResult(null);
-                        await webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closed by the WebSocket middleware", CancellationToken.None);
+                        if (webSocket.State == WebSocketState.Open || webSocket.State == WebSocketState.CloseReceived)
+                        {
+                            await webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closed by the WebSocket middleware", CancellationToken.None);
+                        }
                         webSocket.Dispose();
                         _logger.LogInformation("WebSocket connection closed.");
                     }
@@ -68,6 +75,22 @@ namespace QuietQuillBE.MiddleWare
             else
             {
                 await _next(context);
+            }
+        }
+
+        private async Task<bool> ValidateTokenAsync(string token, HttpContext context)
+        {
+            try
+            {
+                var handler = new JwtSecurityTokenHandler();
+                var jwtToken = handler.ReadJwtToken(token);
+                context.User = new ClaimsPrincipal(new ClaimsIdentity(jwtToken.Claims, "jwt"));
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Token validation failed.");
+                return false;
             }
         }
 
@@ -105,18 +128,25 @@ namespace QuietQuillBE.MiddleWare
                             .Where(s => s.State == WebSocketState.Open)
                             .Select(s => s.SendAsync(new ArraySegment<byte>(System.Text.Encoding.UTF8.GetBytes(message), 0, result.Count), result.MessageType, result.EndOfMessage, CancellationToken.None));
 
+                        
                         await Task.WhenAll(tasks);
                     }
                     catch (JsonException jsonEx)
                     {
                         _logger.LogError(jsonEx, "Invalid JSON payload");
-                        await webSocket.CloseAsync(WebSocketCloseStatus.InvalidPayloadData, "Invalid JSON payload", CancellationToken.None);
+                        if (webSocket.State == WebSocketState.Open || webSocket.State == WebSocketState.CloseReceived)
+                        {
+                            await webSocket.CloseAsync(WebSocketCloseStatus.InvalidPayloadData, "Invalid JSON payload", CancellationToken.None);
+                        }
                         return;
                     }
                     catch (Exception ex)
                     {
                         _logger.LogError(ex, "Error processing the message");
-                        await webSocket.CloseAsync(WebSocketCloseStatus.InvalidPayloadData, "Invalid payload", CancellationToken.None);
+                        if (webSocket.State == WebSocketState.Open || webSocket.State == WebSocketState.CloseReceived)
+                        {
+                            await webSocket.CloseAsync(WebSocketCloseStatus.InvalidPayloadData, "Invalid payload", CancellationToken.None);
+                        }
                         return;
                     }
 

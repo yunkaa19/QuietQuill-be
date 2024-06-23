@@ -64,7 +64,7 @@ public static class DependencyInjection
         services.AddScoped<IUserMeditationRecordRepository, UserMeditationRecordRepository>();
         services.AddScoped<IUserQuizRecordRepository, UserQuizRecordRepository>();
         services.AddScoped<IPaperPlaneRepository, PaperPlaneRepository>();
-        
+        services.AddScoped<IResourceRepository, ResourceRepository>();
         //Dapper query executor
         services.AddScoped<IDbQueryExecutor, DapperDbQueryExecutor>();
         

@@ -29,6 +29,7 @@ namespace Infrastructure.Persistence;
         public DbSet<JournalEntry> JournalEntries { get; set; }
         public DbSet<Reminder> Reminders { get; set; }
         public DbSet<Habit> Habits { get; set; }
+        public DbSet<Resource> Resources { get; set; }
         public DbSet<MeditationSession> MeditationSessions { get; set; }
         public DbSet<UserQuizRecord> UserQuizRecords { get; set; }
         public DbSet<PaperPlaneEntity> PaperPlanes { get; set; }
