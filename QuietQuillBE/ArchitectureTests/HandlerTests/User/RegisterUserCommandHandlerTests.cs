@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Application.Users.Commands.RegisterUser;
@@ -54,12 +55,14 @@ namespace ArchitectureTests.HandlerTests.Users
             _userRepositoryMock.Setup(r => r.AddAsync(It.IsAny<User>())).Returns(Task.CompletedTask);
             _unitOfWorkMock.Setup(u => u.SaveChangesAsync(It.IsAny<CancellationToken>())).ReturnsAsync(1);
 
+            var expectedJson = JsonSerializer.Serialize(new { identityID = "GeneratedIdentityID" });
+
             // Act
             var result = await _handler.Handle(command, CancellationToken.None);
 
             // Assert
             Assert.NotNull(result);
-            Assert.Equal("GeneratedIdentityID", result);
+            Assert.Equal(expectedJson, result);
 
             _validatorMock.Verify(v => v.ValidateAsync(command, It.IsAny<CancellationToken>()), Times.Once);
             _userRepositoryMock.Verify(r => r.UserExists(command.Email), Times.Once);
